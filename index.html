@@ -18,6 +18,10 @@
 <meta property="og:title" content="Nolan Arc — Réalisateur · Films de marque & Événementiel">
 <meta property="og:description" content="Je rends beau le réel. Films de marque, mariages, direction artistique. Seul, de la conception au rendu.">
 <meta property="og:image" content="https://nolanarc.com/og-cover.jpg">
+<!--
+  OG IMAGE : remplace l'URL ci-dessus par ton image 1200x630px une fois déployée.
+  En attendant, utilise le SVG ci-dessous comme base pour créer og-cover.jpg
+-->
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Nolan Arc">
 
@@ -31,20 +35,88 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Nolan Arc",
-  "jobTitle": "Réalisateur",
-  "url": "https://nolanarc.com",
-  "sameAs": [
-    "https://instagram.com/nolan.arc_",
-    "https://youtube.com/@nolanarc"
-  ],
-  "description": "Réalisateur freelance spécialisé en films de marque et événementiel.",
-  "knowsAbout": ["Films de marque", "Vidéaste mariage", "Direction artistique", "Réalisation"]
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://nolanarc.com/#nolan",
+      "name": "Nolan Arc",
+      "alternateName": "Nolan Ribeiro",
+      "jobTitle": "Réalisateur",
+      "description": "Réalisateur freelance spécialisé en films de marque, vidéaste mariage et direction artistique. Basé en France, disponible partout.",
+      "url": "https://nolanarc.com",
+      "image": "https://nolanarc.com/og-cover.jpg",
+      "sameAs": [
+        "https://instagram.com/nolan.arc_",
+        "https://youtube.com/@nolanarc",
+        "https://www.youtube.com/channel/@nolanarc"
+      ],
+      "knowsAbout": [
+        "Films de marque",
+        "Vidéaste mariage",
+        "Direction artistique",
+        "Réalisation vidéo",
+        "Film institutionnel",
+        "Demande en mariage filmée",
+        "Contenu réseaux sociaux"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@nolanarc.com",
+        "contactType": "customer service",
+        "availableLanguage": "French"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://nolanarc.com/#service",
+      "name": "Nolan Arc — Réalisation vidéo",
+      "provider": {"@id": "https://nolanarc.com/#nolan"},
+      "description": "Films de marque, vidéaste mariage et direction artistique en France.",
+      "areaServed": "France",
+      "serviceType": ["Film de marque", "Vidéaste mariage", "Direction artistique"],
+      "url": "https://nolanarc.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nolanarc.com/#website",
+      "url": "https://nolanarc.com",
+      "name": "Nolan Arc",
+      "description": "Portfolio de Nolan Arc, réalisateur films de marque et événementiel.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://nolanarc.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
 }
 </script>
 
+<!-- FAVICON inline SVG -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><ellipse cx='52' cy='52' rx='38' ry='26' fill='none' stroke='%23cc460c' stroke-width='3' transform='rotate(-20 52 52)'/><circle cx='72' cy='36' r='4' fill='%23f0ebe2'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080706'/><ellipse cx='52' cy='52' rx='38' ry='26' fill='none' stroke='%23cc460c' stroke-width='4' transform='rotate(-20 52 52)'/></svg>">
+<meta name="theme-color" content="#080706">
+
+<!-- Perf & tech -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+<!-- SEO avancé -->
+<meta name="geo.region" content="FR">
+<meta name="geo.placename" content="France">
+<meta name="language" content="French">
+<meta name="revisit-after" content="7 days">
+<meta name="rating" content="general">
+
+<!-- Preload critical fonts -->
+<link rel="preload" href="https://fonts.gstatic.com/s/yrsa/v22/wlprgwnQFlxs_wD3CFSMYmFaaCieS2HiEm-w.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Yrsa:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 
 <style>
@@ -95,11 +167,35 @@ section{padding:9rem 6vw;position:relative;}
 .eyebrow::before{content:'';width:22px;height:1px;background:var(--orange);}
 .s-title{font-family:var(--title);font-size:clamp(2rem,4.5vw,3.8rem);font-weight:400;line-height:1.08;letter-spacing:-.01em;margin-bottom:1.5rem;max-width:760px;}
 .s-title em{font-style:italic;color:var(--orange);}
-.s-body{font-family:var(--body);font-size:.95rem;color:var(--muted);line-height:1.9;max-width:540px;}
+.s-body{font-family:var(--body);font-size:1.05rem;color:var(--muted);line-height:1.9;max-width:540px;}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
 .reveal.on{opacity:1;transform:none;}
+
+
+/* ─── HERO SHOWREEL BG ─── */
+.hero-reel{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero-reel-overlay{position:absolute;inset:0;z-index:2;
+  background:linear-gradient(0deg,rgba(8,7,6,1) 0%,rgba(8,7,6,.75) 40%,rgba(8,7,6,.55) 70%,rgba(8,7,6,.4) 100%);
+}
+.hero-reel iframe{position:absolute;top:50%;left:50%;width:177.78vh;height:100vh;min-width:100%;min-height:56.25vw;transform:translate(-50%,-50%);pointer-events:none;opacity:0;transition:opacity 1.5s ease;z-index:1;}
+.hero-reel.loaded iframe{opacity:1;}
+.hero-reel-placeholder{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse at 60% 40%,rgba(204,70,12,.12) 0%,transparent 60%);}
+.reel-placeholder-text{position:absolute;top:50%;right:6vw;transform:translateY(-50%);text-align:right;opacity:.2;}
+.reel-placeholder-text span{display:block;font-family:var(--head);font-size:.5rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);}
+.reel-placeholder-text em{display:block;font-family:var(--title);font-size:4rem;font-style:italic;color:var(--white);line-height:1;}
+#hero .arc-bg,#hero .hero-glow,#hero .hero-glow2,#hero .hero-kicker,#hero .hero-title,#hero .hero-bottom,#hero .hero-scroll{position:relative;z-index:3;}
+
+
+/* HERO CTA */
+.hero-ctas{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.hero-cta-btn{display:inline-flex;align-items:center;gap:1rem;padding:1.1rem 2.5rem;background:var(--orange);font-family:var(--head);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bg);text-decoration:none;font-weight:600;transition:background .3s,transform .2s;}
+.hero-cta-btn:hover{background:#e04e0e;transform:translateY(-1px);}
+.hero-cta-btn span{transition:transform .3s;}
+.hero-cta-btn:hover span{transform:translateX(4px);}
+.hero-cta-link{font-family:var(--head);font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--faint);padding-bottom:2px;transition:color .3s,border-color .3s;}
+.hero-cta-link:hover{color:var(--orange);border-color:var(--orange);}
 
 /* ─────────────────────
    1. HERO
@@ -148,7 +244,7 @@ section{padding:9rem 6vw;position:relative;}
 .service-card:hover::after{transform:scaleX(1);}
 .sc-icon{font-family:var(--title);font-size:3rem;font-style:italic;color:var(--orange);opacity:.55;margin-bottom:2rem;line-height:1;}
 .sc-title{font-family:var(--head);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:1rem;}
-.sc-desc{font-family:var(--body);font-size:.88rem;color:var(--muted);line-height:1.85;margin-bottom:2rem;}
+.sc-desc{font-family:var(--body);font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:2rem;}
 .sc-list{list-style:none;border-top:1px solid var(--faint);padding-top:1.5rem;}
 .sc-list li{font-family:var(--head);font-size:.47rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding:.5rem 0;border-bottom:1px solid rgba(30,28,24,.5);display:flex;align-items:center;gap:.7rem;transition:color .3s;}
 .sc-list li:hover{color:var(--light);}
@@ -181,7 +277,7 @@ section{padding:9rem 6vw;position:relative;}
 .work-item:hover .work-play{opacity:1;}
 .work-play::after{content:'';border-left:14px solid var(--white);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px;}
 .work-cta{margin-top:3rem;text-align:center;}
-.work-cta-link{font-family:var(--head);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:1rem;padding:.8rem 2rem;border:1px solid var(--faint);transition:all .4s;}
+.work-cta-link{font-family:var(--head);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:1rem;padding:.8rem 2rem;border:1px solid var(--faint);transition:all .4s;}
 .work-cta-link:hover{color:var(--orange);border-color:var(--orange);}
 
 /* ─────────────────────
@@ -195,7 +291,7 @@ section{padding:9rem 6vw;position:relative;}
 .pillar-last{background:var(--off);border-right:none;display:flex;align-items:center;justify-content:center;border-bottom:none;}
 .pillar-n{font-family:var(--head);font-size:.47rem;letter-spacing:.18em;color:var(--odim);margin-bottom:1rem;}
 .pillar-title{font-family:var(--title);font-size:1.1rem;font-style:italic;color:var(--white);margin-bottom:.6rem;}
-.pillar-text{font-family:var(--body);font-size:.88rem;color:var(--muted);line-height:1.8;}
+.pillar-text{font-family:var(--body);font-size:1rem;color:var(--muted);line-height:1.8;}
 .manifeste-declaration{margin-top:3px;padding:4.5rem 5rem;background:linear-gradient(135deg,var(--card) 0%,var(--bg) 100%);border:1px solid var(--faint);border-top:none;font-family:var(--title);font-size:clamp(1.2rem,2vw,1.8rem);font-weight:300;font-style:italic;color:var(--light);line-height:1.55;position:relative;}
 .manifeste-declaration::before{content:'"';position:absolute;top:-1.2rem;left:4rem;font-family:var(--title);font-size:10rem;color:var(--orange);opacity:.13;line-height:1;}
 
@@ -219,13 +315,13 @@ section{padding:9rem 6vw;position:relative;}
 .carousel-dots{display:flex;gap:.5rem;margin-left:.5rem;}
 .cdot{width:6px;height:6px;border-radius:50%;background:var(--faint);transition:background .3s,transform .3s;}
 .cdot.active{background:var(--orange);transform:scale(1.3);}
-.about-quote{padding:2.5rem 2.5rem 2.5rem 3rem;border-left:2px solid var(--orange);font-family:var(--title);font-size:1.1rem;font-style:italic;font-weight:300;color:var(--light);line-height:1.7;margin-bottom:2.5rem;background:linear-gradient(90deg,rgba(204,70,12,.04) 0%,transparent 100%);}
+.about-quote{padding:2.5rem 2.5rem 2.5rem 3rem;border-left:2px solid var(--orange);font-family:var(--title);font-size:1.25rem;font-style:italic;font-weight:300;color:var(--light);line-height:1.7;margin-bottom:2.5rem;background:linear-gradient(90deg,rgba(204,70,12,.04) 0%,transparent 100%);}
 .about-details{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--faint);}
 .about-detail{padding:1.5rem;border-right:1px solid var(--faint);border-bottom:1px solid var(--faint);}
 .about-detail:nth-child(even){border-right:none;}
 .about-detail:nth-last-child(-n+2){border-bottom:none;}
 .ad-label{font-family:var(--head);font-size:.44rem;letter-spacing:.18em;text-transform:uppercase;color:var(--odim);margin-bottom:.5rem;}
-.ad-val{font-family:var(--title);font-size:.95rem;font-style:italic;color:var(--grey);}
+.ad-val{font-family:var(--title);font-size:1.05rem;font-style:italic;color:var(--grey);}
 
 /* ─────────────────────
    5. PROCESSUS
@@ -237,7 +333,7 @@ section{padding:9rem 6vw;position:relative;}
 .process-step:hover{background:linear-gradient(160deg,rgba(204,70,12,.07) 0%,var(--off) 80%);}
 .ps-n{font-family:var(--title);font-size:4.5rem;font-weight:300;font-style:italic;color:rgba(204,70,12,.14);line-height:1;margin-bottom:2rem;}
 .ps-title{font-family:var(--head);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:1rem;}
-.ps-desc{font-family:var(--body);font-size:.88rem;color:var(--muted);line-height:1.8;}
+.ps-desc{font-family:var(--body);font-size:1rem;color:var(--muted);line-height:1.8;}
 
 /* ─────────────────────
    6. VALEURS
@@ -248,7 +344,7 @@ section{padding:9rem 6vw;position:relative;}
 .valeur-item:hover{padding-left:.5rem;}
 .vi-icon{font-size:1rem;color:var(--orange);opacity:.65;margin-top:.1rem;font-family:var(--title);}
 .vi-title{font-family:var(--head);font-size:.58rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:.5rem;}
-.vi-desc{font-family:var(--body);font-size:.88rem;color:var(--muted);line-height:1.8;}
+.vi-desc{font-family:var(--body);font-size:1rem;color:var(--muted);line-height:1.8;}
 .valeurs-right{position:sticky;top:8rem;display:flex;flex-direction:column;gap:3px;}
 .vq-block{padding:3.5rem;background:linear-gradient(135deg,var(--card) 0%,var(--bg) 100%);border:1px solid var(--faint);border-left:2px solid var(--orange);position:relative;overflow:hidden;}
 .vq-block::before{content:'';position:absolute;top:0;right:0;width:60%;height:100%;background:radial-gradient(ellipse at top right,rgba(204,70,12,.07) 0%,transparent 70%);}
@@ -256,7 +352,7 @@ section{padding:9rem 6vw;position:relative;}
 .vq-attr{font-family:var(--head);font-size:.44rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);position:relative;}
 .son-block{padding:2.5rem;background:var(--card);border:1px solid var(--faint);}
 .son-label{font-family:var(--head);font-size:.44rem;letter-spacing:.2em;text-transform:uppercase;color:var(--odim);margin-bottom:1rem;}
-.son-text{font-family:var(--body);font-size:.88rem;color:var(--muted);line-height:1.85;}
+.son-text{font-family:var(--body);font-size:1rem;color:var(--muted);line-height:1.85;}
 
 /* ─────────────────────
    7. NOM
@@ -270,7 +366,7 @@ section{padding:9rem 6vw;position:relative;}
 .nom-sense:hover{background:rgba(204,70,12,.04);}
 .ns-n{font-family:var(--head);font-size:.44rem;letter-spacing:.18em;color:var(--odim);margin-bottom:.8rem;}
 .ns-title{font-family:var(--title);font-size:1rem;font-style:italic;color:var(--white);margin-bottom:.6rem;}
-.ns-desc{font-family:var(--body);font-size:.82rem;color:var(--muted);line-height:1.7;}
+.ns-desc{font-family:var(--body);font-size:.95rem;color:var(--muted);line-height:1.7;}
 .nom-handles{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;}
 .nom-handle{font-family:var(--head);font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
 .nom-handle em{color:var(--orange);font-style:normal;}
@@ -292,15 +388,19 @@ section{padding:9rem 6vw;position:relative;}
 .contact-lane:hover::before{opacity:1;}
 .cl-tag{font-family:var(--head);font-size:.45rem;letter-spacing:.22em;text-transform:uppercase;color:var(--odim);margin-bottom:1.5rem;}
 .cl-title{font-family:var(--title);font-size:clamp(1.3rem,2.5vw,2rem);font-style:italic;color:var(--white);margin-bottom:1rem;line-height:1.1;}
-.cl-desc{font-family:var(--body);font-size:.88rem;color:var(--muted);line-height:1.85;margin-bottom:2.5rem;max-width:360px;}
+.cl-desc{font-family:var(--body);font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:2.5rem;max-width:360px;}
 .cl-list{list-style:none;margin-bottom:3rem;}
 .cl-list li{font-family:var(--head);font-size:.46rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding:.45rem 0;border-bottom:1px solid rgba(30,28,24,.5);display:flex;align-items:center;gap:.7rem;}
 .cl-list li::before{content:'→';color:var(--orange);font-size:.5rem;}
-.cl-cta{display:inline-flex;align-items:center;gap:1.2rem;padding:1rem 2.2rem;border:1px solid var(--orange);font-family:var(--head);font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);text-decoration:none;position:relative;overflow:hidden;transition:color .4s;}
+.cl-cta{display:inline-flex;align-items:center;gap:1.6rem;padding:1.6rem 3.5rem;border:1px solid var(--orange);font-family:var(--head);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);text-decoration:none;position:relative;overflow:hidden;transition:color .4s;font-weight:600;}
 .cl-cta::before{content:'';position:absolute;inset:0;background:var(--orange);transform:translateX(-100%);transition:transform .45s cubic-bezier(.16,1,.3,1);}
 .cl-cta:hover{color:var(--bg);}
 .cl-cta:hover::before{transform:translateX(0);}
 .cl-cta span{position:relative;z-index:1;}
+/* CTA filled — variante remplie */
+.cl-cta.filled{background:var(--orange);color:var(--bg);}
+.cl-cta.filled::before{transform:translateX(0);background:var(--white);}
+.cl-cta.filled:hover{color:var(--bg);}
 .contact-info{margin-top:1px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--faint);border-top:none;background:var(--faint);}
 .cinfo-item{padding:2rem 2.5rem;background:var(--off);transition:background .3s;}
 .cinfo-item:hover{background:rgba(204,70,12,.03);}
@@ -312,7 +412,7 @@ section{padding:9rem 6vw;position:relative;}
 .verd-glow{position:absolute;top:50%;left:50%;width:800px;height:800px;background:radial-gradient(circle,rgba(204,70,12,.09) 0%,transparent 60%);transform:translate(-50%,-50%);pointer-events:none;}
 .verd-n{font-family:var(--title);font-size:clamp(5rem,14vw,12rem);font-weight:400;line-height:.9;letter-spacing:-.02em;color:var(--white);margin-bottom:3rem;}
 .verd-n em{color:var(--orange);font-style:italic;}
-.verd-text{font-family:var(--body);font-size:clamp(.88rem,1.2vw,.98rem);color:var(--muted);max-width:560px;margin:0 auto 4rem;line-height:1.95;border-left:2px solid var(--grey);padding-left:2rem;text-align:left;}
+.verd-text{font-family:var(--body);font-size:clamp(1rem,1.4vw,1.1rem);color:var(--muted);max-width:560px;margin:0 auto 4rem;line-height:1.95;border-left:2px solid var(--grey);padding-left:2rem;text-align:left;}
 .verd-last{font-family:var(--title);font-size:clamp(1.2rem,2.3vw,1.9rem);font-weight:300;font-style:italic;color:var(--muted);line-height:1.55;border-left:2px solid var(--orange);padding-left:2rem;max-width:600px;margin:0 auto;text-align:left;}
 .verd-last em{color:var(--white);font-style:normal;}
 
@@ -353,7 +453,7 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
 .testi-card:first-child{border-left:1px solid var(--faint);}
 .testi-card:hover{background:rgba(204,70,12,.03);}
 .testi-quote-mark{font-family:var(--title);font-size:5rem;font-style:italic;color:rgba(204,70,12,.15);line-height:.8;margin-bottom:1.5rem;display:block;}
-.testi-text{font-family:var(--title);font-size:1rem;font-style:italic;font-weight:300;color:var(--light);line-height:1.75;margin-bottom:2.5rem;}
+.testi-text{font-family:var(--title);font-size:1.1rem;font-style:italic;font-weight:300;color:var(--light);line-height:1.75;margin-bottom:2.5rem;}
 .testi-author{display:flex;align-items:center;gap:1.2rem;}
 .testi-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--odim),var(--orange));display:flex;align-items:center;justify-content:center;font-family:var(--title);font-size:.9rem;font-style:italic;color:var(--white);flex-shrink:0;}
 .testi-name{font-family:var(--head);font-size:.52rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:.2rem;}
@@ -368,6 +468,258 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
 .testi-btn:hover{border-color:var(--orange);color:var(--orange);}
 .testi-progress{flex:1;height:1px;background:var(--faint);margin:0 2rem;position:relative;overflow:hidden;}
 .testi-progress-bar{position:absolute;left:0;top:0;height:100%;background:var(--orange);transition:width .6s cubic-bezier(.16,1,.3,1);}
+
+
+
+/* ─── WORK LIST VIEW ─── */
+#workGrid.list-view{grid-template-columns:1fr;background:transparent;gap:0;border:1px solid var(--faint);}
+#workGrid.list-view .work-item{aspect-ratio:unset;height:72px;border-bottom:1px solid var(--faint);background:var(--off);}
+#workGrid.list-view .work-item:last-child{border-bottom:none;}
+#workGrid.list-view .work-item.wide{grid-column:span 1;}
+#workGrid.list-view .work-thumb{display:none;}
+#workGrid.list-view .work-glow{display:none;}
+#workGrid.list-view .work-overlay{opacity:1;background:transparent;position:relative;inset:auto;padding:0 2.5rem;height:100%;display:flex;align-items:center;gap:2rem;flex-direction:row;justify-content:space-between;}
+#workGrid.list-view .work-tag{font-size:.44rem;margin-bottom:0;min-width:140px;}
+#workGrid.list-view .work-title{font-family:var(--title);font-size:.95rem;font-style:italic;color:var(--light);margin-bottom:0;}
+#workGrid.list-view .work-sub{font-size:.78rem;margin-left:auto;}
+#workGrid.list-view .work-play{display:none;}
+#workGrid.list-view .work-item:hover{background:rgba(204,70,12,.04);}
+.view-btn.active{color:var(--orange) !important;background:rgba(204,70,12,.06) !important;}
+
+/* ─── FORMULAIRE CONTACT ─── */
+.contact-form-wrap{margin-top:5rem;border:1px solid var(--faint);}
+.cf-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.cf-field{padding:2rem 2.5rem;border-bottom:1px solid var(--faint);}
+.cf-grid .cf-field{border-right:1px solid var(--faint);}
+.cf-grid .cf-field:last-child{border-right:none;}
+.cf-label{font-family:var(--head);font-size:.44rem;letter-spacing:.18em;text-transform:uppercase;color:var(--odim);display:block;margin-bottom:.8rem;}
+.cf-input{width:100%;background:transparent;border:none;border-bottom:1px solid var(--faint);color:var(--white);font-family:var(--title);font-size:1rem;font-style:italic;font-weight:300;padding:.6rem 0;outline:none;transition:border-color .3s;-webkit-appearance:none;}
+.cf-input:focus{border-color:var(--orange);}
+.cf-input::placeholder{color:var(--muted);font-style:italic;}
+.cf-textarea{resize:none;line-height:1.7;}
+.cf-radios{display:flex;flex-wrap:wrap;gap:.6rem;}
+.cf-radio{display:flex;align-items:center;gap:.6rem;cursor:pointer;}
+.cf-radio input{display:none;}
+.cf-radio span{font-family:var(--head);font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:.45rem 1rem;border:1px solid var(--faint);transition:all .3s;}
+.cf-radio input:checked + span{color:var(--orange);border-color:var(--orange);background:rgba(204,70,12,.06);}
+.cf-radio:hover span{border-color:var(--mid);color:var(--light);}
+.cf-footer{padding:2rem 2.5rem;border-top:1px solid var(--faint);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.cf-rgpd{font-family:var(--body);font-size:.75rem;color:var(--muted);max-width:420px;line-height:1.6;}
+.cf-rgpd a{color:var(--muted);text-decoration:underline;text-underline-offset:3px;transition:color .3s;}
+.cf-rgpd a:hover{color:var(--orange);}
+.cf-submit{display:inline-flex;align-items:center;gap:1.6rem;padding:1.6rem 3.5rem;border:1px solid var(--orange);background:transparent;font-family:var(--head);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);cursor:pointer;position:relative;overflow:hidden;transition:color .4s;white-space:nowrap;font-weight:600;}
+.cf-submit::before{content:'';position:absolute;inset:0;background:var(--orange);transform:translateX(-100%);transition:transform .45s cubic-bezier(.16,1,.3,1);}
+.cf-submit:hover{color:var(--bg);}
+.cf-submit:hover::before{transform:translateX(0);}
+.cf-submit span{position:relative;z-index:1;}
+.cf-success{padding:5rem 3rem;text-align:center;}
+.cf-success-icon{font-size:1.5rem;color:var(--orange);margin-bottom:1.5rem;}
+.cf-success-title{font-family:var(--title);font-size:2rem;font-style:italic;color:var(--white);margin-bottom:1rem;}
+.cf-success-text{font-family:var(--body);font-size:.9rem;color:var(--muted);}
+.cf-success-text a{color:var(--orange);text-decoration:none;}
+.cf-error{border-color:var(--orange) !important;}
+@media(max-width:768px){
+  .cf-grid{grid-template-columns:1fr;}
+  .cf-grid .cf-field{border-right:none;}
+  .cf-footer{flex-direction:column;align-items:flex-start;}
+  .cf-radios{flex-direction:column;}
+}
+
+
+/* ─── PAGE LOADER ─── */
+
+#loader.hide{opacity:0;transform:translateY(-8px);pointer-events:none;}
+
+.loader-ellipse svg{width:100%;height:100%;}
+.loader-ellipse .el-track{stroke:rgba(204,70,12,.12);}
+.loader-ellipse .el-fill{stroke:var(--orange);stroke-dasharray:220;stroke-dashoffset:220;animation:loaderDash 1.4s cubic-bezier(.4,0,.2,1) infinite;}
+
+
+}
+50%{stroke-dashoffset:0;opacity:1;}100%{stroke-dashoffset:-220;opacity:0;}}
+50%{opacity:1;transform:scale(1.2);}}
+
+/* ─── ARC ANIMATIONS ─── */
+.arc-bg{animation:arcRotate 40s linear infinite;}
+.arc-bg:nth-child(1){animation-duration:80s;}
+.arc-bg:nth-child(2){animation-duration:60s;animation-direction:reverse;}
+.arc-bg:nth-child(3){animation-duration:45s;}
+.arc-bg:nth-child(4){animation-duration:30s;animation-direction:reverse;}
+@keyframes arcRotate{from{transform:translateY(-50%) rotate(0deg);}to{transform:translateY(-50%) rotate(360deg);}}
+
+/* ─── MICRO ANIMATIONS ─── */
+/* Stats — flicker on load */
+.hstat-n{animation:statAppear .6s both;}
+.hstat:nth-child(1) .hstat-n{animation-delay:1.2s;}
+.hstat:nth-child(2) .hstat-n{animation-delay:1.4s;}
+.hstat:nth-child(3) .hstat-n{animation-delay:1.6s;}
+@keyframes statAppear{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+/* Nav logo — subtle pulse on hover */
+.nav-logo{transition:opacity .3s;}
+.nav-logo:hover{opacity:.75;}
+
+/* Service cards — subtle float on hover */
+.service-card{transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s;}
+.service-card:hover{transform:translateY(-3px);}
+
+/* Process steps — number glow on hover */
+.process-step:hover .ps-n{color:rgba(204,70,12,.3);transition:color .4s;}
+
+/* Valeur items — icon pulse */
+.valeur-item:hover .vi-icon{animation:iconPulse .5s ease;}
+@keyframes iconPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.3);}}
+
+/* Marquee — orange on hover item */
+.marquee-item{transition:color .3s;}
+.marquee-wrap:hover .marquee-item:hover{color:var(--white);}
+
+/* Work items — subtle lift */
+.work-item{transition:transform .5s cubic-bezier(.16,1,.3,1);}
+.work-item:hover{transform:scale(1.01);}
+
+/* Eyebrow line — grow on section enter */
+.reveal.on .eyebrow::before{animation:lineGrow .6s cubic-bezier(.16,1,.3,1) both;}
+@keyframes lineGrow{from{width:0;}to{width:22px;}}
+
+
+
+/* ─── COOKIE CONSENT ─── */
+#cookieBanner{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(120%);z-index:8000;background:var(--card);border:1px solid var(--faint);border-left:2px solid var(--orange);padding:1.5rem 2rem;display:flex;align-items:center;gap:2rem;max-width:680px;width:calc(100% - 4rem);transition:transform .6s cubic-bezier(.16,1,.3,1);backdrop-filter:blur(12px);}
+#cookieBanner.show{transform:translateX(-50%) translateY(0);}
+.cookie-text{font-family:var(--body);font-size:.8rem;color:var(--muted);line-height:1.6;flex:1;}
+.cookie-text a{color:var(--orange);text-decoration:underline;text-underline-offset:3px;}
+.cookie-btns{display:flex;gap:.5rem;flex-shrink:0;}
+.cookie-btn{font-family:var(--head);font-size:.44rem;letter-spacing:.14em;text-transform:uppercase;padding:.6rem 1.2rem;border:1px solid var(--faint);background:transparent;color:var(--muted);cursor:pointer;transition:all .3s;white-space:nowrap;}
+.cookie-btn.accept{border-color:var(--orange);color:var(--orange);}
+.cookie-btn.accept:hover{background:var(--orange);color:var(--bg);}
+.cookie-btn:hover{border-color:var(--mid);color:var(--light);}
+@media(max-width:600px){
+  #cookieBanner{flex-direction:column;align-items:flex-start;gap:1rem;}
+  .cookie-btns{width:100%;}
+  .cookie-btn{flex:1;text-align:center;}
+}
+
+
+/* ─── ARC ANIMATIONS ─── */
+.arc-bg{animation:arcRotate var(--dur, 40s) linear infinite var(--dir, normal);}
+.arc-bg:nth-child(1){--dur:80s;}
+.arc-bg:nth-child(2){--dur:60s;--dir:reverse;}
+.arc-bg:nth-child(3){--dur:45s;}
+.arc-bg:nth-child(4){--dur:30s;--dir:reverse;}
+@keyframes arcRotate{from{transform:translateY(-50%) rotate(0deg);}to{transform:translateY(-50%) rotate(360deg);}}
+
+/* ─── MICRO-ANIMATIONS ─── */
+/* Nav logo subtle pulse on load */
+@keyframes logoPulse{0%,100%{opacity:1;}50%{opacity:.7;}}
+/* Eyebrow line grow */
+.eyebrow::before{transform-origin:left;animation:lineGrow .8s cubic-bezier(.16,1,.3,1) both;}
+.eyebrow.on::before{animation:lineGrow .8s cubic-bezier(.16,1,.3,1) both;}
+@keyframes lineGrow{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+/* Stat number color flash on count end */
+.hstat-n.counted{animation:countFlash .4s ease;}
+@keyframes countFlash{0%{color:var(--white);}100%{color:var(--orange);}}
+/* Service card border-bottom pulse */
+.service-card:hover::after{animation:borderPulse .6s cubic-bezier(.16,1,.3,1) forwards;}
+/* Work item shimmer on hover */
+.work-item::before{content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(204,70,12,.04) 50%,transparent 60%);transform:translateX(-100%);transition:transform 0s;z-index:1;pointer-events:none;}
+.work-item:hover::before{transform:translateX(100%);transition:transform .7s ease;}
+/* Valeur item slide marker */
+.valeur-item::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%) scaleY(0);width:2px;height:70%;background:var(--orange);transition:transform .4s cubic-bezier(.16,1,.3,1);transform-origin:center;}
+.valeur-item{position:relative;}
+.valeur-item:hover::before{transform:translateY(-50%) scaleY(1);}
+/* Marquee pause on section hover */
+#hero:hover .marquee-track{animation-play-state:running;}
+/* Process step number float */
+.ps-n{transition:transform .4s cubic-bezier(.16,1,.3,1),color .4s;}
+.process-step:hover .ps-n{transform:translateY(-4px);color:rgba(204,70,12,.25);}
+/* Pillar title underline */
+.pillar-title{position:relative;display:inline-block;}
+.pillar-title::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--orange);transition:width .4s cubic-bezier(.16,1,.3,1);}
+.pillar:hover .pillar-title::after{width:100%;}
+
+/* ─── FAQ ─── */
+.faq-list{margin-top:4rem;border:1px solid var(--faint);}
+.faq-item{border-bottom:1px solid var(--faint);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{width:100%;padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;background:transparent;border:none;cursor:pointer;text-align:left;transition:background .3s;}
+.faq-q:hover{background:rgba(204,70,12,.03);}
+.faq-q-text{font-family:var(--title);font-size:1rem;font-style:italic;font-weight:400;color:var(--white);line-height:1.4;}
+.faq-icon,.faq-q-icon{width:28px;height:28px;border:1px solid var(--faint);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .3s,background .3s,transform .4s,color .3s;font-size:.9rem;color:var(--muted);font-family:var(--body);line-height:1;}
+.faq-item.open .faq-icon,.faq-item.open .faq-q-icon{border-color:var(--orange);background:rgba(204,70,12,.08);color:var(--orange);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.16,1,.3,1);}
+.faq-item.open .faq-a{max-height:500px;}
+.faq-a-inner{padding:0 2.5rem 2rem;font-family:var(--body);font-size:1rem;color:var(--muted);line-height:1.9;}
+.faq-a-inner a{color:var(--orange);text-decoration:none;}
+.faq-item.open 
+
+/* ─── COOKIE CONSENT ─── */
+#cookieBanner{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(120%);z-index:8000;width:min(680px,92vw);background:var(--card);border:1px solid var(--faint);border-bottom:2px solid var(--orange);display:flex;align-items:center;gap:2rem;padding:1.8rem 2.2rem;transition:transform .6s cubic-bezier(.16,1,.3,1);flex-wrap:wrap;}
+#cookieBanner.show{transform:translateX(-50%) translateY(0);}
+.cookie-text{font-family:var(--body);font-size:.82rem;color:var(--muted);line-height:1.7;flex:1;min-width:200px;}
+.cookie-text a{color:var(--orange);text-decoration:underline;text-underline-offset:3px;}
+.cookie-btns{display:flex;gap:.6rem;flex-shrink:0;}
+.cookie-accept{padding:.7rem 1.5rem;border:1px solid var(--orange);background:var(--orange);font-family:var(--head);font-size:.44rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bg);cursor:pointer;transition:all .3s;}
+.cookie-accept:hover{background:transparent;color:var(--orange);}
+.cookie-refuse{padding:.7rem 1.5rem;border:1px solid var(--faint);background:transparent;font-family:var(--head);font-size:.44rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all .3s;}
+.cookie-refuse:hover{border-color:var(--muted);color:var(--light);}
+
+/* ─── EASTER EGG ─── */
+#easterEgg{position:fixed;inset:0;z-index:9900;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .6s;}
+#easterEgg.show{opacity:1;pointer-events:all;}
+.ee-content{text-align:center;max-width:500px;padding:3rem;}
+.ee-symbol{font-family:var(--title);font-size:6rem;font-style:italic;color:var(--orange);opacity:.4;line-height:1;margin-bottom:2rem;animation:eeSpin 20s linear infinite;}
+.ee-title{font-family:var(--title);font-size:2rem;font-style:italic;color:var(--white);margin-bottom:1rem;}
+.ee-text{font-family:var(--body);font-size:.88rem;color:var(--muted);line-height:1.85;margin-bottom:2rem;}
+.ee-close{font-family:var(--head);font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--faint);padding:.7rem 1.5rem;cursor:pointer;transition:all .3s;}
+.ee-close:hover{border-color:var(--orange);color:var(--orange);}
+@keyframes eeSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+/* ─── 404 INLINE (si besoin de fallback) ─── */
+
+
+/* ─── CLIENTS STRIP ─── */
+#clients{background:var(--bg);padding:5rem 6vw;}
+.clients-label{font-family:var(--head);font-size:.46rem;letter-spacing:.22em;text-transform:uppercase;color:var(--odim);text-align:center;margin-bottom:3rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;}
+.clients-label::before,.clients-label::after{content:'';flex:1;max-width:80px;height:1px;background:var(--faint);}
+.clients-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0;border:1px solid var(--faint);}
+.client-item{padding:2.2rem 3rem;border-right:1px solid var(--faint);display:flex;align-items:center;justify-content:center;transition:background .3s;position:relative;flex:1;min-width:140px;}
+.client-item:last-child{border-right:none;}
+.client-item:hover{background:rgba(204,70,12,.03);}
+.client-name{font-family:var(--title);font-size:1rem;font-style:italic;color:var(--muted);transition:color .3s;white-space:nowrap;text-align:center;}
+.client-item:hover .client-name{color:var(--light);}
+.client-type{position:absolute;bottom:.6rem;left:50%;transform:translateX(-50%);font-family:var(--head);font-size:.36rem;letter-spacing:.14em;text-transform:uppercase;color:var(--odim);white-space:nowrap;opacity:0;transition:opacity .3s;}
+.client-item:hover .client-type{opacity:1;}
+@media(max-width:768px){
+  .client-item{border-right:none;border-bottom:1px solid var(--faint);padding:1.8rem 2rem;min-width:45%;}
+  .client-item:last-child{border-bottom:none;}
+}
+
+/* ─── PHOTO PORTRAIT ─── */
+.about-portrait{position:relative;height:480px;overflow:hidden;border:1px solid var(--faint);}
+.portrait-placeholder{position:absolute;inset:0;background:linear-gradient(160deg,var(--card) 0%,var(--bg) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;}
+.portrait-initials{font-family:var(--title);font-size:7rem;font-style:italic;color:rgba(204,70,12,.12);line-height:1;user-select:none;}
+.portrait-hint{font-family:var(--head);font-size:.44rem;letter-spacing:.18em;text-transform:uppercase;color:var(--odim);text-align:center;max-width:180px;line-height:1.8;}
+.portrait-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0;transition:opacity .5s;}
+.portrait-img.loaded{opacity:1;}
+.portrait-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,7,6,.6) 0%,transparent 50%);pointer-events:none;}
+.portrait-caption{position:absolute;bottom:1.8rem;left:2rem;right:2rem;}
+.portrait-name{font-family:var(--title);font-size:1.1rem;font-style:italic;color:var(--white);}
+.portrait-role{font-family:var(--head);font-size:.43rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:.3rem;}
+
+/* ─── DISPONIBILITÉ HERO ─── */
+.hero-dispo{display:inline-flex;align-items:center;gap:.7rem;padding:.5rem 1.2rem;border:1px solid rgba(204,70,12,.25);background:rgba(204,70,12,.06);margin-bottom:2rem;opacity:0;animation:up .7s .2s both;}
+.dispo-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0;animation:dispoPulse 2s ease infinite;}
+.dispo-text{font-family:var(--head);font-size:.44rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);}
+@keyframes dispoPulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+
+/* ─── PERF & ACCESSIBILITÉ ─── */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
+  .arc-bg{animation:none !important;}
+  .marquee-track{animation:none !important;}
+  .reveal{opacity:1 !important;transform:none !important;}
+}
 
 /* TILT */
 .tilt-card{transform-style:preserve-3d;}
@@ -478,12 +830,63 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
   </div>
 </div>
 
+
+
+<!-- COOKIE CONSENT -->
+<div id="cookieBanner">
+  <div class="cookie-text">
+    Ce site intègre des vidéos YouTube et Vimeo qui peuvent déposer des cookies.
+    En continuant, tu acceptes leur utilisation. <a href="mentions-legales.html" target="_blank">En savoir plus</a>
+  </div>
+  <div class="cookie-btns">
+    <button class="cookie-btn" onclick="rejectCookies()">Refuser</button>
+    <button class="cookie-btn accept" onclick="acceptCookies()">Accepter</button>
+  </div>
+</div>
+
+    <div class="loader-ring"></div>
+    <div class="loader-dot"></div>
+  </div>
+  <div class="loader-word"><span>Nolan.Arc</span></div>
+  <div class="loader-progress"><div class="loader-progress-bar" id="loaderBar"></div></div>
+</div>
+
+<!-- COOKIE CONSENT -->
+<div id="cookieBanner">
+  <div class="cookie-text">
+    Ce site intègre des vidéos YouTube et Vimeo qui peuvent déposer des cookies tiers. En continuant, tu acceptes leur utilisation. <a href="mentions-legales.html">Mentions légales</a>
+  </div>
+  <div class="cookie-btns">
+    <button class="cookie-refuse" id="cookieRefuse">Refuser</button>
+    <button class="cookie-accept" id="cookieAccept">Accepter</button>
+  </div>
+</div>
+
+<!-- EASTER EGG -->
+<div id="easterEgg">
+  <div class="ee-content">
+    <div class="ee-symbol">Arc</div>
+    <div class="ee-title">Tu as trouvé quelque chose.</div>
+    <div class="ee-text">
+      La plupart des gens regardent un film et voient une histoire.<br>
+      Toi, tu cherches ce qu'il y a derrière.<br><br>
+      C'est exactement le genre de regard dont j'ai besoin.
+    </div>
+    <a href="#contact" onclick="document.getElementById('easterEgg').classList.remove('show')">
+      <button class="ee-close">Travaillons ensemble →</button>
+    </a>
+    &nbsp;
+    <button class="ee-close" onclick="document.getElementById('easterEgg').classList.remove('show')">✕ Fermer</button>
+  </div>
+</div>
+
 <div id="cur"></div><div id="cur-ring"></div><div id="prog"></div>
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
   <a href="#services" onclick="closeMobile()">Services</a>
   <a href="#work" onclick="closeMobile()">Work</a>
+  <a href="#clients" onclick="closeMobile()">Clients</a>
   <a href="#testimonials" onclick="closeMobile()">Avis</a>
   <a href="#manifeste" onclick="closeMobile()">Manifeste</a>
   <a href="#about" onclick="closeMobile()">À propos</a>
@@ -496,7 +899,7 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#work">Work</a></li>
-    <li><a href="#testimonials">Avis</a></li>
+    <li><a href="#clients">Clients</a></li>
     <li><a href="#testimonials">Avis</a></li>
     <li><a href="#manifeste">Manifeste</a></li>
     <li><a href="#about">À propos</a></li>
@@ -512,12 +915,45 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
   <div class="arc-bg"></div><div class="arc-bg"></div><div class="arc-bg"></div><div class="arc-bg"></div>
   <div class="hero-glow parallax-bg" data-speed=".3"></div>
   <div class="hero-glow2 parallax-bg" data-speed=".15"></div>
+
+  <!--
+    SHOWREEL BACKGROUND
+    Pour activer : remplace YOUTUBE_SHOWREEL_ID par ton ID YouTube
+    ex: pour https://youtube.com/watch?v=dQw4w9WgXcQ → mets "dQw4w9WgXcQ"
+    La vidéo joue en muet, en boucle, en arrière-plan.
+  -->
+  <div class="hero-reel" id="heroReel">
+    <div class="hero-reel-overlay"></div>
+    <iframe
+      id="heroReelFrame"
+      src=""
+      data-src="https://www.youtube.com/embed/YOUTUBE_SHOWREEL_ID?autoplay=1&mute=1&loop=1&playlist=YOUTUBE_SHOWREEL_ID&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1"
+      allow="autoplay"
+      title="Showreel Nolan Arc"
+      frameborder="0">
+    </iframe>
+    <div class="hero-reel-placeholder">
+      <!-- Placeholder visible tant que le showreel n'est pas configuré -->
+      <div class="reel-placeholder-text">
+        <span>Showreel</span>
+        <em>Bientôt</em>
+      </div>
+    </div>
+  </div>
+  <!--
+    DISPONIBILITÉ : change le texte selon ta situation réelle
+    ex: "Disponible dès juin 2026" / "2 créneaux ouverts" / "Complet jusqu'en septembre"
+  -->
+  <div class="hero-dispo">
+    <div class="dispo-dot"></div>
+    <span class="dispo-text">Disponible — nouveaux projets ouverts</span>
+  </div>
   <div class="hero-kicker">Réalisateur · Films de marque · Événementiel</div>
   <h1 class="hero-title">Nolan<span class="dot">.</span><span class="arc">Arc</span></h1>
   <div class="hero-bottom">
     <p class="hero-claim">
-      Je réalise des films pour les marques qui se soucient de leur message, de leur image et de la cohérence qu'elles renvoient.<br><br>
-      Et ce qui ne se revit pas — <strong>je le capture.</strong>
+      Je réalise des films pour les marques qui se soucient de leur message et de leur image.<br><br>
+      Ce qui ne se revit pas, <strong>je le capture.</strong>
     </p>
     <div class="hero-right">
       <div class="hero-stats">
@@ -533,6 +969,10 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
           <div class="hstat-n">100%</div>
           <div class="hstat-l">Solo · de A à Z</div>
         </div>
+      </div>
+      <div class="hero-ctas">
+        <a href="#contact" class="hero-cta-btn">Parlons de ton projet <span>→</span></a>
+        <a href="#work" class="hero-cta-link">Voir le travail</a>
       </div>
       <div class="hero-scroll">Découvrir</div>
     </div>
@@ -560,7 +1000,7 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
     <div class="service-card tilt-card reveal">
       <div class="sc-icon">◈</div>
       <div class="sc-title">Films de marque</div>
-      <div class="sc-desc">Pour les marques qui se soucient de leur message, de leur image et de la cohérence qu'elles renvoient. Je les accompagne pour affiner leur vision — et leur proposer une stratégie qui durera sur le long terme.</div>
+      <div class="sc-desc">Pour les marques qui se soucient de leur message, de leur image et de la cohérence qu'elles renvoient. Je les accompagne pour affiner leur vision et construire une stratégie qui durera sur le long terme.</div>
       <ul class="sc-list">
         <li>Film institutionnel</li><li>Présentation de produit</li>
         <li>Contenu réseaux sociaux</li><li>Direction artistique</li>
@@ -569,7 +1009,7 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
     <div class="service-card tilt-card reveal">
       <div class="sc-icon">◇</div>
       <div class="sc-title">Événementiel & Moments de vie</div>
-      <div class="sc-desc">Ce qui ne se revit pas — je le capture. Les demandes en mariage, les gens qui se marient pour la vie. Je les accompagne dans leur rythme et place ma vision pour montrer ce qui est réfléchi et symbolique.</div>
+      <div class="sc-desc">Ce qui ne se revit pas, je le capture. Les demandes en mariage, les gens qui se marient pour la vie. Je me place dans leur rythme pour montrer ce qui est réfléchi et symbolique.</div>
       <ul class="sc-list">
         <li>Film de mariage</li><li>Demande en mariage</li>
         <li>Moments de vie</li><li>Souvenirs durables</li>
@@ -578,7 +1018,7 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
     <div class="service-card tilt-card reveal">
       <div class="sc-icon">○</div>
       <div class="sc-title">Direction Artistique</div>
-      <div class="sc-desc">Définir une cohérence visuelle globale — identité, ton, univers. Pour que chaque production s'inscrive dans quelque chose de plus grand et de plus durable que le projet lui-même.</div>
+      <div class="sc-desc">Définir une cohérence visuelle globale : identité, ton, univers. Pour que chaque production s'inscrive dans quelque chose de plus grand que le projet lui-même.</div>
       <ul class="sc-list">
         <li>Stratégie visuelle</li><li>Cohérence de marque</li>
         <li>Conseil créatif</li><li>Accompagnement long terme</li>
@@ -587,17 +1027,57 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
   </div>
 </section>
 
+<!-- CLIENTS -->
+<!--
+  SECTION CLIENTS
+  Remplace les noms par tes vrais clients.
+  Tu peux mettre un logo SVG à la place du texte si tu en as.
+  Pour ajouter un client : duplique un .client-item
+  Pour retirer un client : supprime le .client-item complet
+-->
+<section id="clients">
+  <div class="clients-label reveal">Ils m'ont fait confiance</div>
+  <div class="clients-grid reveal">
+    <div class="client-item">
+      <div class="client-name">Nom du client</div>
+      <div class="client-type">Film de marque</div>
+    </div>
+    <div class="client-item">
+      <div class="client-name">Nom du client</div>
+      <div class="client-type">Film de mariage</div>
+    </div>
+    <div class="client-item">
+      <div class="client-name">Nom du client</div>
+      <div class="client-type">Direction artistique</div>
+    </div>
+    <div class="client-item">
+      <div class="client-name">Nom du client</div>
+      <div class="client-type">Film de marque</div>
+    </div>
+    <div class="client-item">
+      <div class="client-name">Nom du client</div>
+      <div class="client-type">Événementiel</div>
+    </div>
+  </div>
+</section>
+
 <!-- PORTFOLIO -->
 <section id="work">
   <div class="eyebrow reveal">Le travail</div>
   <h2 class="s-title reveal">Ce qui a été <em>réalisé.</em></h2>
-  <p class="s-body reveal">Chaque projet est une décision. Un message. Une intention — du premier plan au dernier plan.</p>
+  <p class="s-body reveal">Chaque projet est une décision. Un message. Une intention portée du premier plan au dernier.</p>
 
-  <div class="work-filters reveal">
-    <button class="wf-btn active" data-filter="all">Tout</button>
-    <button class="wf-btn" data-filter="marque">Films de marque</button>
-    <button class="wf-btn" data-filter="event">Événementiel</button>
-    <button class="wf-btn" data-filter="da">Direction artistique</button>
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;" class="reveal">
+    <div class="work-filters">
+      <button class="wf-btn active" data-filter="all">Tout</button>
+      <button class="wf-btn" data-filter="marque">Films de marque</button>
+      <button class="wf-btn" data-filter="event">Événementiel</button>
+      <button class="wf-btn" data-filter="da">Direction artistique</button>
+    </div>
+    <div style="display:flex;gap:0;border:1px solid var(--faint);">
+      <button class="view-btn active" data-view="grid" title="Vue grille" onclick="setView('grid',this)" style="width:36px;height:36px;background:transparent;border:none;border-right:1px solid var(--faint);color:var(--muted);cursor:pointer;font-size:.9rem;transition:all .3s;display:flex;align-items:center;justify-content:center;">⊞</button>
+      <button class="view-btn" data-view="list" title="Vue liste" onclick="setView('list',this)" style="width:36px;height:36px;background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:.85rem;transition:all .3s;display:flex;align-items:center;justify-content:center;">☰</button>
+    </div>
   </div>
 
   <!-- 
@@ -821,7 +1301,7 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
           <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
         </div>
         <span class="testi-quote-mark">"</span>
-        <div class="testi-text">Deuxième avis ici. Idéalement un client de marque pour couvrir les deux cibles. Même logique — texte brut, mots du client.</div>
+        <div class="testi-text">Deuxième avis ici. Idéalement un client de marque pour couvrir les deux cibles. Même logique : texte brut, mots du client.</div>
         <div class="testi-author">
           <div class="testi-avatar">M</div>
           <div>
@@ -857,7 +1337,7 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
           <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
         </div>
         <span class="testi-quote-mark">"</span>
-        <div class="testi-text">Quatrième avis — optionnel. Ajoute-le si tu l'as, la section s'adapte automatiquement au nombre de cards présentes.</div>
+        <div class="testi-text">Quatrième avis, optionnel. Ajoute-le si tu l'as, la section s'adapte automatiquement au nombre de cards présentes.</div>
         <div class="testi-author">
           <div class="testi-avatar">A</div>
           <div>
@@ -887,27 +1367,27 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
     <div class="pillar">
       <div class="pillar-n">01</div>
       <div class="pillar-title">L'Authenticité Rendue Belle</div>
-      <div class="pillar-text">Je cherche pas à inventer quelque chose. Je cherche à révéler ce qui est déjà là — et à le montrer sous son meilleur jour.</div>
+      <div class="pillar-text">Je cherche pas à inventer quelque chose. Je cherche à révéler ce qui est déjà là pour le montrer sous son meilleur jour.</div>
     </div>
     <div class="pillar">
       <div class="pillar-n">02</div>
       <div class="pillar-title">Le Principe de l'Intention</div>
-      <div class="pillar-text">Chaque plan doit avoir une signification pour l'auteur. On décide ce qu'on doit capturer — pas l'inverse.</div>
+      <div class="pillar-text">Chaque plan doit avoir une signification pour l'auteur. On décide ce qu'on doit capturer. Pas l'inverse.</div>
     </div>
     <div class="pillar">
       <div class="pillar-n">03</div>
       <div class="pillar-title">La Règle de l'Invisible</div>
-      <div class="pillar-text">Tout doit être cohérent et fluide. Ce qui est superficiel disparaît. Ce qui fait l'élégance — on le met en priorité.</div>
+      <div class="pillar-text">Tout doit être cohérent et fluide. Ce qui est superficiel disparaît. Ce qui fait l'élégance, on le met en priorité.</div>
     </div>
     <div class="pillar">
       <div class="pillar-n">04</div>
       <div class="pillar-title">Seul, de A à Z</div>
-      <div class="pillar-text">De la conception au rendu, je contrôle tout. Pas par ego — par cohérence. Quand une vision passe par trop de mains, elle perd quelque chose.</div>
+      <div class="pillar-text">De la conception au rendu, je contrôle tout. Pas par ego, par cohérence. Quand une vision passe par trop de mains, elle perd quelque chose d'essentiel.</div>
     </div>
     <div class="pillar" style="border-bottom:none;">
       <div class="pillar-n">05</div>
       <div class="pillar-title">Le créateur et son message</div>
-      <div class="pillar-text">Je mets toute ma réflexion dans chaque réalisation. On peut pas prédire ce que les gens vont ressentir. On peut juste fortement l'influencer.</div>
+      <div class="pillar-text">Je mets toute ma réflexion dans chaque réalisation. On ne peut pas prédire ce que les gens vont ressentir. On peut juste fortement l'influencer.</div>
     </div>
     <div class="pillar pillar-last" style="border-bottom:none;">
       <div style="text-align:center;">
@@ -917,42 +1397,45 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
     </div>
   </div>
   <div class="manifeste-declaration reveal">
-    "Avant de filmer, je prends du recul. Je m'intéresse à l'ensemble — pas juste au plan. Je rythme ma vision avec l'émotion et le message. Pour que le temps que tu passes avec moi, tu le transformes en sensation."
+    "Avant de filmer, je prends du recul. Je m'intéresse à l'ensemble, pas seulement au plan. Je rythme ma vision avec l'émotion et le message. Pour que le temps que tu passes avec moi se transforme en sensation."
   </div>
 </section>
 
 <!-- 4. À PROPOS -->
 <section id="about">
   <div class="eyebrow reveal">À propos</div>
-  <h2 class="s-title reveal">Je travaille pour les marques qui ont quelque chose à dire — <em>et pour les moments qui méritent de rester.</em></h2>
+  <h2 class="s-title reveal">Je travaille pour les marques qui ont quelque chose à dire, <em>et pour les moments qui méritent de rester.</em></h2>
   <div class="about-layout">
     <div class="reveal">
-      <div class="about-carousel">
-        <div class="carousel-track" id="cTrack">
-          <div class="carousel-slide">
-            <div class="slide-frame"><div class="slide-inner"><div class="slide-letter">N</div></div>
-            <div class="slide-label">Vision · Intention · Beauté</div><div class="slide-year">Films de marque</div></div>
-          </div>
-          <div class="carousel-slide">
-            <div class="slide-frame"><div class="slide-inner"><div class="slide-letter">A</div></div>
-            <div class="slide-label">Ce qui ne se revit pas</div><div class="slide-year">Événementiel</div></div>
-          </div>
-          <div class="carousel-slide">
-            <div class="slide-frame"><div class="slide-inner"><div class="slide-letter">R</div></div>
-            <div class="slide-label">Seul · De A à Z</div><div class="slide-year">Direction artistique</div></div>
-          </div>
+      <!--
+        PHOTO DE TOI
+        Pour activer : remplace src="" par le chemin de ta photo
+        ex: src="photos/nolan-portrait.jpg"
+        Format recommandé : portrait 3:4, minimum 800x1000px
+        La photo sera recadrée automatiquement sur le visage
+      -->
+      <div class="about-portrait">
+        <div class="portrait-placeholder" id="portraitPlaceholder">
+          <div class="portrait-initials">N</div>
+          <div class="portrait-hint">Ajoute ta photo ici<br>src="ton-portrait.jpg"</div>
         </div>
-        <div class="carousel-nav">
-          <button class="carousel-btn" id="cPrev">←</button>
-          <button class="carousel-btn" id="cNext">→</button>
-          <div class="carousel-dots">
-            <div class="cdot active"></div><div class="cdot"></div><div class="cdot"></div>
-          </div>
+        <img
+          class="portrait-img"
+          id="portraitImg"
+          src=""
+          data-src=""
+          alt="Nolan Arc — Réalisateur"
+          loading="lazy"
+        >
+        <div class="portrait-overlay"></div>
+        <div class="portrait-caption">
+          <div class="portrait-name">Nolan Arc</div>
+          <div class="portrait-role">Réalisateur · France</div>
         </div>
       </div>
     </div>
     <div>
-      <div class="about-quote reveal">"Je réalise des films de marque et je capture des moments de vie. Deux univers. Une seule obsession : rendre le réel beau."</div>
+      <div class="about-quote reveal">"Je réalise des films de marque et je capture des moments de vie. Deux univers, une seule obsession : rendre le réel beau."</div>
       <div class="about-details reveal">
         <div class="about-detail"><div class="ad-label">Méthode</div><div class="ad-val">Seul, de la conception au rendu</div></div>
         <div class="about-detail"><div class="ad-label">Univers</div><div class="ad-val">Marques · Événements · Vie</div></div>
@@ -984,7 +1467,7 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
     </div>
     <div class="process-step tilt-card">
       <div class="ps-n">04</div><div class="ps-title">Livrer</div>
-      <div class="ps-desc">Je monte, j'affine, je rends. Une œuvre cohérente — qui durera bien au-delà de la tendance du moment.</div>
+      <div class="ps-desc">Je monte, j'affine, je rends. Une œuvre cohérente qui durera bien au-delà de la tendance du moment.</div>
     </div>
   </div>
 </section>
@@ -997,29 +1480,29 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
     <div>
       <div class="valeur-item reveal">
         <div class="vi-icon">◆</div>
-        <div><div class="vi-title">Le Rythme</div><div class="vi-desc">Je prends du recul, je m'intéresse à l'ensemble. Je rythme ma vision avec l'émotion et le message — pour que l'œuvre soit homogène de bout en bout.</div></div>
+        <div><div class="vi-title">Le Rythme</div><div class="vi-desc">Je prends du recul, je m'intéresse à l'ensemble. Je rythme ma vision avec l'émotion et le message pour que l'œuvre soit cohérente de bout en bout.</div></div>
       </div>
       <div class="valeur-item reveal">
         <div class="vi-icon">◇</div>
-        <div><div class="vi-title">La Beauté</div><div class="vi-desc">Pas la beauté artificielle. Le meilleur d'un moment — révélé, pas construit.</div></div>
+        <div><div class="vi-title">La Beauté</div><div class="vi-desc">Pas la beauté artificielle. Le meilleur d'un moment, révélé plutôt que construit.</div></div>
       </div>
       <div class="valeur-item reveal">
         <div class="vi-icon">○</div>
-        <div><div class="vi-title">La Cohérence</div><div class="vi-desc">Seul de A à Z. Parce qu'une vision qui passe par trop de mains perd quelque chose d'essentiel.</div></div>
+        <div><div class="vi-title">La Cohérence</div><div class="vi-desc">Seul de A à Z, parce qu'une vision qui passe par trop de mains perd quelque chose d'essentiel.</div></div>
       </div>
       <div class="valeur-item reveal">
         <div class="vi-icon">—</div>
-        <div><div class="vi-title">La Durée</div><div class="vi-desc">Je construis quelque chose de cohérent sur 20 ans. Pas un feed optimisé pour ce trimestre.</div></div>
+        <div><div class="vi-title">La Durée</div><div class="vi-desc">Je construis quelque chose de cohérent sur 20 ans, pas un feed optimisé pour ce trimestre.</div></div>
       </div>
     </div>
     <div class="valeurs-right">
       <div class="vq-block reveal">
-        <div class="vq-text">"Le meilleur d'un moment, ça existe déjà. Mon travail, c'est de le rendre impossible à oublier."</div>
+        <div class="vq-text">"Le meilleur d'un moment existe déjà. Mon travail, c'est de le rendre impossible à oublier."</div>
         <div class="vq-attr">Nolan Arc · Réalisateur</div>
       </div>
       <div class="son-block reveal">
         <div class="son-label">L'univers sonore</div>
-        <div class="son-text">Mes références musicales changent au quotidien — elles accompagnent mes projets, mes émotions, mes moments de vie. Ce qui compte, c'est pas le style : c'est que la musique corresponde à l'intention et au message de chaque réalisation.<br><br>Le son précède l'image. Il décide de ce que tu vas ressentir avant même que le premier plan apparaisse.</div>
+        <div class="son-text">Mes références musicales changent au quotidien : elles accompagnent mes projets, mes émotions, mes moments de vie. Ce qui compte, c'est pas le style, c'est que la musique corresponde à l'intention et au message de chaque réalisation.<br><br>Le son précède l'image. Il décide de ce que tu vas ressentir avant même que le premier plan apparaisse.</div>
       </div>
     </div>
   </div>
@@ -1030,10 +1513,10 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
   <div class="eyebrow reveal" style="justify-content:center;">Le nom</div>
   <div class="nom-display reveal">Nolan<em>.Arc</em></div>
   <div class="nom-senses reveal">
-    <div class="nom-sense"><div class="ns-n">01</div><div class="ns-title">Arc narratif</div><div class="ns-desc">La structure de toute histoire. Chaque réalisateur en construit un — mais peu savent qu'ils le font.</div></div>
-    <div class="nom-sense"><div class="ns-n">02</div><div class="ns-title">Arc de lumière</div><div class="ns-desc">La courbe que trace la lumière. Pas un effet — une décision. La matière première de chaque plan.</div></div>
-    <div class="nom-sense"><div class="ns-n">03</div><div class="ns-title">Arc de trajectoire</div><div class="ns-desc">Une carrière n'est pas une ligne droite. C'est une courbe. Et quand tu sais où elle mène — tout change.</div></div>
-    <div class="nom-sense"><div class="ns-n">04</div><div class="ns-title">Arc architectural</div><div class="ns-desc">La forme qui tient tout ensemble. Une œuvre a toujours un arc. C'est lui qui décide si elle reste.</div></div>
+    <div class="nom-sense"><div class="ns-n">01</div><div class="ns-title">Arc narratif</div><div class="ns-desc">La structure de toute histoire. Chaque réalisateur en construit un, mais peu le savent vraiment.</div></div>
+    <div class="nom-sense"><div class="ns-n">02</div><div class="ns-title">Arc de lumière</div><div class="ns-desc">La courbe que trace la lumière. Pas un effet mais une décision. La matière première de chaque plan.</div></div>
+    <div class="nom-sense"><div class="ns-n">03</div><div class="ns-title">Arc de trajectoire</div><div class="ns-desc">Une carrière n'est pas une ligne droite. C'est une courbe. Et quand tu sais où elle mène, tout change.</div></div>
+    <div class="nom-sense"><div class="ns-n">04</div><div class="ns-title">Arc architectural</div><div class="ns-desc">La forme qui tient tout ensemble. Une œuvre a toujours un arc : c'est lui qui décide si elle reste.</div></div>
   </div>
   <div class="nom-handles reveal">
     <div class="nom-handle">Instagram <em>@nolan.arc_</em></div>
@@ -1046,26 +1529,26 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
 <section id="contact">
   <div class="contact-hero reveal">
     <div class="contact-title">Tu as un projet.<br><em>Parlons-en.</em></div>
-    <p class="contact-sub">Dis-moi ce que tu veux transmettre — on part de là.</p>
+    <p class="contact-sub">Dis-moi ce que tu veux transmettre. On part de là.</p>
   </div>
 
   <div class="contact-dual reveal">
     <div class="contact-lane brand">
       <div class="cl-tag">Pour les marques</div>
       <div class="cl-title">Tu veux un film<br>qui dure dans le temps.</div>
-      <div class="cl-desc">Restaurants, marques personnelles, services. Je t'accompagne pour affiner ta vision et construire quelque chose de cohérent sur le long terme.</div>
+      <div class="cl-desc">Restaurants, marques personnelles, services : je t'accompagne pour affiner ta vision et construire quelque chose de cohérent sur le long terme.</div>
       <ul class="cl-list">
         <li>Film institutionnel</li>
         <li>Présentation de produit</li>
         <li>Stratégie contenu</li>
         <li>Direction artistique</li>
       </ul>
-      <a href="mailto:contact@nolanarc.com?subject=Film de marque" class="cl-cta"><span>Je suis une marque</span><span>→</span></a>
+      <a href="mailto:contact@nolanarc.com?subject=Film de marque" class="cl-cta filled"><span>Je suis une marque</span><span>→</span></a>
     </div>
     <div class="contact-lane event">
       <div class="cl-tag">Pour les moments de vie</div>
       <div class="cl-title">Tu veux capturer<br>ce qui ne se revit pas.</div>
-      <div class="cl-desc">Mariage, demande en mariage, moments de vie. Je me place dans ton rythme — pour montrer ce qui est réfléchi, symbolique, et beau.</div>
+      <div class="cl-desc">Mariage, demande en mariage, moments de vie : je me place dans ton rythme pour montrer ce qui est réfléchi, symbolique et beau.</div>
       <ul class="cl-list">
         <li>Film de mariage</li>
         <li>Demande en mariage</li>
@@ -1076,10 +1559,126 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
     </div>
   </div>
 
+  <!--
+    FORMSPREE — 3 étapes pour activer :
+    1. Crée un compte sur formspree.io
+    2. Crée un nouveau formulaire
+    3. Remplace "YOUR_FORM_ID" par ton ID (ex: xpzvwkrb)
+  -->
+  <div class="contact-form-wrap reveal" id="contactFormWrap">
+    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="Nouveau message — Nolan Arc">
+      <input type="hidden" name="_language" value="fr">
+      <input type="text" name="_gotcha" style="display:none">
+
+      <div class="cf-grid">
+        <div class="cf-field">
+          <label class="cf-label" for="cf-name">Ton prénom</label>
+          <input class="cf-input" type="text" id="cf-name" name="name" placeholder="Marie" required>
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-email">Ton email</label>
+          <input class="cf-input" type="email" id="cf-email" name="email" placeholder="marie@exemple.com" required>
+        </div>
+      </div>
+
+      <div class="cf-field">
+        <label class="cf-label">Type de projet</label>
+        <div class="cf-radios">
+          <label class="cf-radio">
+            <input type="radio" name="type" value="Film de marque" required>
+            <span>Film de marque</span>
+          </label>
+          <label class="cf-radio">
+            <input type="radio" name="type" value="Mariage / Événementiel">
+            <span>Mariage · Événementiel</span>
+          </label>
+          <label class="cf-radio">
+            <input type="radio" name="type" value="Direction artistique">
+            <span>Direction artistique</span>
+          </label>
+          <label class="cf-radio">
+            <input type="radio" name="type" value="Autre">
+            <span>Autre</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="cf-field">
+        <label class="cf-label" for="cf-msg">Ton projet en quelques mots</label>
+        <textarea class="cf-input cf-textarea" id="cf-msg" name="message" placeholder="Dis-moi ce que tu veux transmettre. On part de là." required rows="5"></textarea>
+      </div>
+
+      <div class="cf-footer">
+        <div class="cf-rgpd">En envoyant ce message, tu acceptes que tes données soient utilisées pour te répondre. <a href="mentions-legales.html" target="_blank">Mentions légales</a></div>
+        <button type="submit" class="cf-submit" id="cfSubmit">
+          <span class="cf-submit-text">Envoyer le message</span>
+          <span class="cf-submit-arrow">→</span>
+          <span class="cf-submit-loading" style="display:none">···</span>
+        </button>
+      </div>
+    </form>
+
+    <div class="cf-success" id="cfSuccess" style="display:none">
+      <div class="cf-success-icon">◆</div>
+      <div class="cf-success-title">Message envoyé.</div>
+      <div class="cf-success-text">Je reviens vers toi sous 48h. En attendant, <a href="https://instagram.com/nolan.arc_" target="_blank">@nolan.arc_</a></div>
+    </div>
+  </div>
+
   <div class="contact-info reveal">
     <div class="cinfo-item"><div class="cinfo-label">Basé à</div><div class="cinfo-val">France · Disponible partout</div></div>
     <div class="cinfo-item"><div class="cinfo-label">Délai moyen</div><div class="cinfo-val">Réponse sous 48h</div></div>
-    <div class="cinfo-item"><div class="cinfo-label">Contact</div><div class="cinfo-val">contact@nolanarc.com</div></div>
+    <div class="cinfo-item"><div class="cinfo-label">Contact direct</div><div class="cinfo-val">contact@nolanarc.com</div></div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="eyebrow reveal" style="margin-top:6rem;">Questions fréquentes</div>
+  <h2 class="s-title reveal">Ce que tu te <em>demandes sûrement.</em></h2>
+
+  <div class="faq-list reveal" id="faqAccordion">
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">Comment se passe une collaboration concrètement ?</span>
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">On commence par un échange pour que je comprenne ton projet, ton univers et ce que tu veux transmettre. Je construis ensuite une vision — pas juste un devis. Tournage, montage, rendu : je gère tout seul, de A à Z. Le résultat, tu le reçois prêt à publier.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">Tu travailles partout en France ?</span>
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Oui. Je suis basé en France et je me déplace sur tout le territoire. Pour les projets à l'étranger, c'est envisageable — dis-moi où tu en es et on voit ensemble.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">Quels sont tes délais de livraison ?</span>
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Pour un film de marque, compte en général 2 à 4 semaines après le tournage. Pour un film de mariage, je livre en 4 à 8 semaines. Je prends le temps qu'il faut — pas question de bâcler le montage.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">Est-ce que tu travailles avec des équipes ou seul ?</span>
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Seul, de la conception au rendu. C'est une décision volontaire — pas une contrainte. Quand une vision passe par trop de mains, elle perd quelque chose. Tu travailles avec moi du début à la fin.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">Tu as des tarifs indicatifs ?</span>
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Chaque projet est différent — je ne travaille pas sur catalogue. Dis-moi ce que tu as en tête et je te fais une proposition adaptée. Ce qui compte, c'est qu'on soit alignés sur la vision avant de parler budget.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">Est-ce qu'on peut voir des exemples de ton travail ?</span>
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Le portfolio est en haut de page. Tu retrouves aussi mes réalisations sur <a href="https://instagram.com/nolan.arc_" target="_blank" style="color:var(--orange);">@nolan.arc_</a> et <a href="https://youtube.com/@nolanarc" target="_blank" style="color:var(--orange);">YouTube @nolanarc</a> tu trouveras l'ensemble de mes réalisations. N'hésite pas à regarder avant de me contacter.</div></div>
+    </div>
   </div>
 </section>
 
@@ -1089,7 +1688,7 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
   <div class="verd-n reveal">Nolan<em>.Arc</em></div>
   <div class="verd-text reveal">
     Je prends du recul. Je m'intéresse à l'ensemble.<br><br>
-    Je construis des œuvres homogènes — pour des marques qui ont quelque chose à dire, et pour des moments qui ne se revivent pas. Chaque plan a une signification. Tout ce qui est superficiel disparaît. Ce qui fait l'élégance reste.<br><br>
+    Je construis des œuvres cohérentes pour des marques qui ont quelque chose à dire et pour des moments qui ne se revivent pas. Chaque plan a une signification. Tout ce qui est superficiel disparaît. Ce qui fait l'élégance, lui, reste.<br><br>
     <strong style="color:var(--white);">Seul, de la conception au rendu. C'est ça, Nolan Arc.</strong>
   </div>
   <div class="verd-last reveal">
@@ -1099,14 +1698,15 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
   </div>
 </section>
 
+
 <!-- FOOTER -->
 <footer>
   <div class="foot-logo">Nolan<em>.Arc</em></div>
   <ul class="foot-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#work">Work</a></li>
-    <li><a href="#testimonials">Avis</a></li>
-    <li><a href="#testimonials">Avis</a></li>
+    <li><a href="#clients">Clients</a></li>
+    
     <li><a href="#manifeste">Manifeste</a></li>
     <li><a href="#about">À propos</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -1115,6 +1715,146 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
 </footer>
 
 <script>
+/* ── PAGE LOADER */
+const loader = document.getElementById('loader');
+const MIN_LOAD = 1200; // ms minimum display
+const startTime = Date.now();
+window.addEventListener('load', () => {
+  const elapsed = Date.now() - startTime;
+  const remaining = Math.max(0, MIN_LOAD - elapsed);
+  setTimeout(() => {
+    loader.classList.add('hide');
+    setTimeout(() => { loader.style.display = 'none'; }, 700);
+  }, remaining);
+});
+
+/* ── PAGE TRANSITIONS */
+const pageTransition = document.getElementById('pageTransition');
+function doTransition(href) {
+  document.body.classList.add('is-transitioning');
+  pageTransition.classList.add('entering');
+  setTimeout(() => { window.location.href = href; }, 600);
+}
+// Intercept internal links (project pages etc)
+document.addEventListener('click', e => {
+  const a = e.target.closest('a');
+  if (!a) return;
+  const href = a.getAttribute('href');
+  if (!href || href.startsWith('#') || href.startsWith('mailto') ||
+      href.startsWith('http') || a.target === '_blank') return;
+  e.preventDefault();
+  doTransition(href);
+});
+// On page show (back/forward) — clear transition
+window.addEventListener('pageshow', () => {
+  pageTransition.classList.remove('entering');
+  pageTransition.classList.remove('leaving');
+  document.body.classList.remove('is-transitioning');
+});
+
+/* ── COOKIE CONSENT */
+function acceptCookies() {
+  localStorage.setItem('cookie_consent', 'accepted');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+function rejectCookies() {
+  localStorage.setItem('cookie_consent', 'rejected');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+(function initCookie() {
+  const consent = localStorage.getItem('cookie_consent');
+  if (!consent) {
+    setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 2000);
+  }
+})();
+
+/* ── FAQ ACCORDION */
+(function(){
+  function initFaq() {
+    document.querySelectorAll('#faqAccordion .faq-q, .faq-list .faq-q').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const item = this.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        // Fermer tous
+        document.querySelectorAll('.faq-item.open').forEach(i => {
+          i.classList.remove('open');
+          const ic = i.querySelector('.faq-q-icon');
+          if(ic) ic.textContent = '+';
+        });
+        // Ouvrir si était fermé
+        if(!isOpen) {
+          item.classList.add('open');
+          const ic = this.querySelector('.faq-q-icon');
+          if(ic) ic.textContent = '×';
+        }
+      });
+    });
+  }
+  // Init au chargement
+  if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFaq);
+  } else {
+    initFaq();
+  }
+})();
+
+/* ── EASTER EGG — Konami code → ellipse explosion */
+(function() {
+  const seq = [38,38,40,40,37,39,37,39,66,65];
+  let idx = 0;
+  document.addEventListener('keydown', e => {
+    if (e.keyCode === seq[idx]) {
+      idx++;
+      if (idx === seq.length) {
+        idx = 0;
+        triggerEasterEgg();
+      }
+    } else { idx = 0; }
+  });
+  function triggerEasterEgg() {
+    const msg = document.createElement('div');
+    msg.style.cssText = `position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:9999;
+      text-align:center;pointer-events:none;animation:eggAnim 3s ease forwards;`;
+    msg.innerHTML = `<div style="font-family:'Yrsa',serif;font-size:clamp(2rem,6vw,4rem);font-style:italic;color:#f0ebe2;line-height:1.2;">
+      Tu as trouvé l'arc.<br><em style="color:#cc460c;">Bien joué.</em></div>`;
+    const style = document.createElement('style');
+    style.textContent = `@keyframes eggAnim{0%{opacity:0;transform:translate(-50%,-50%) scale(.8);}20%{opacity:1;transform:translate(-50%,-50%) scale(1);}80%{opacity:1;}100%{opacity:0;transform:translate(-50%,-50%) scale(1.1);}}`;
+    document.head.appendChild(style);
+    document.body.appendChild(msg);
+    // Spawn orange particles
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('div');
+      const angle = (i / 18) * Math.PI * 2;
+      const dist = 120 + Math.random() * 80;
+      p.style.cssText = `position:fixed;top:50%;left:50%;width:4px;height:4px;border-radius:50%;
+        background:#cc460c;z-index:9998;pointer-events:none;
+        animation:particle${i} 1.5s ease forwards;`;
+      const dx = Math.cos(angle) * dist;
+      const dy = Math.sin(angle) * dist;
+      style.textContent += `@keyframes particle${i}{0%{transform:translate(-50%,-50%);opacity:1;}100%{transform:translate(calc(-50% + ${dx}px),calc(-50% + ${dy}px));opacity:0;}}`;
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 1600);
+    }
+    setTimeout(() => { msg.remove(); }, 3100);
+  }
+})();
+
+
+
+/* ── PAGE TRANSITIONS — disabled in preview, enable on real domain */
+// Uncomment below when deployed to nolanarc.com
+/*
+const pt = document.getElementById('page-transition');
+document.querySelectorAll('a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="http"]):not([href^="tel"])').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const href = link.getAttribute('href');
+    pt.classList.add('entering');
+    setTimeout(()=>{ window.location.href = href; }, 480);
+  });
+});
+*/
+
 /* CURSOR */
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
 if(cur){
@@ -1141,21 +1881,7 @@ window.addEventListener('scroll',()=>{
   });
 },{ passive:true });
 
-/* COUNTER */
-function animCount(el){
-  const target=parseInt(el.dataset.count),suffix=el.dataset.suffix||'';
-  const dur=1400,steps=50,inc=target/steps,interval=dur/steps;
-  let cur=0;
-  const t=setInterval(()=>{
-    cur=Math.min(cur+inc,target);
-    el.textContent=Math.round(cur)+suffix;
-    if(cur>=target)clearInterval(t);
-  },interval);
-}
-const cio=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting&&e.target.dataset.count){animCount(e.target);cio.unobserve(e.target);}});
-},{threshold:.5});
-document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+/* counter handled above */
 
 /* TILT 3D */
 document.querySelectorAll('.tilt-card').forEach(card=>{
@@ -1174,20 +1900,7 @@ document.querySelectorAll('.tilt-card').forEach(card=>{
   });
 });
 
-/* CAROUSEL */
-let cIdx=0;
-const cTrack=document.getElementById('cTrack');
-const dots=document.querySelectorAll('.cdot');
-function goTo(n){
-  cIdx=(n+3)%3;
-  cTrack.style.transform=`translateX(-${cIdx*33.333}%)`;
-  dots.forEach((d,i)=>d.classList.toggle('active',i===cIdx));
-}
-document.getElementById('cNext').addEventListener('click',()=>goTo(cIdx+1));
-document.getElementById('cPrev').addEventListener('click',()=>goTo(cIdx-1));
-let autoC=setInterval(()=>goTo(cIdx+1),4000);
-cTrack.parentElement.addEventListener('mouseenter',()=>clearInterval(autoC));
-cTrack.parentElement.addEventListener('mouseleave',()=>{autoC=setInterval(()=>goTo(cIdx+1),4000);});
+/* carousel removed — replaced by portrait */
 
 /* WORK FILTER */
 document.querySelectorAll('.wf-btn').forEach(btn=>{
@@ -1286,6 +1999,178 @@ if(testiTrack){
   document.getElementById('testiPrev').addEventListener('click',()=>goTesti(tIdx-1));
   window.addEventListener('resize',()=>goTesti(0));
 }
+
+/* ── SHOWREEL HERO */
+(function(){
+  const frame = document.getElementById('heroReelFrame');
+  if(!frame) return;
+  const src = frame.dataset.src || '';
+  // Only activate if real ID is set (not placeholder)
+  if(src && !src.includes('YOUTUBE_SHOWREEL_ID')){
+    // Load after page ready to not block LCP
+    setTimeout(()=>{
+      frame.src = src;
+      frame.addEventListener('load', ()=>{
+        document.getElementById('heroReel').classList.add('loaded');
+      });
+    }, 800);
+  }
+})();
+
+/* ── FORMSPREE FORM */
+const contactForm = document.getElementById('contactForm');
+if(contactForm){
+  contactForm.addEventListener('submit', async function(e){
+    e.preventDefault();
+    // Validate
+    let valid = true;
+    contactForm.querySelectorAll('[required]').forEach(field=>{
+      if(!field.value.trim()){
+        field.classList.add('cf-error');
+        valid = false;
+      } else {
+        field.classList.remove('cf-error');
+      }
+    });
+    // Check radio
+    const radioChecked = contactForm.querySelector('input[name="type"]:checked');
+    if(!radioChecked){ valid = false; }
+    if(!valid) return;
+
+    const btn = document.getElementById('cfSubmit');
+    const txtEl = btn.querySelector('.cf-submit-text');
+    const arrEl = btn.querySelector('.cf-submit-arrow');
+    const loadEl = btn.querySelector('.cf-submit-loading');
+    txtEl.style.display='none'; arrEl.style.display='none'; loadEl.style.display='inline';
+    btn.disabled = true;
+
+    try {
+      const data = new FormData(contactForm);
+      const resp = await fetch(contactForm.action, {
+        method:'POST', body:data,
+        headers:{'Accept':'application/json'}
+      });
+      if(resp.ok){
+        contactForm.style.display='none';
+        document.getElementById('cfSuccess').style.display='block';
+      } else {
+        throw new Error('error');
+      }
+    } catch(err){
+      txtEl.textContent='Réessaie';
+      txtEl.style.display='inline'; loadEl.style.display='none';
+      btn.disabled=false;
+    }
+  });
+
+  // Live clear error
+  contactForm.querySelectorAll('.cf-input').forEach(inp=>{
+    inp.addEventListener('input',()=>inp.classList.remove('cf-error'));
+  });
+}
+
+/* ── VIEW TOGGLE grid/list */
+function setView(mode, btn) {
+  const grid = document.getElementById('workGrid');
+  document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (mode === 'list') {
+    grid.classList.add('list-view');
+  } else {
+    grid.classList.remove('list-view');
+  }
+}
+
+/* faq handled by toggleFaq */
+
+/* ── COOKIE CONSENT */
+(function(){
+  const banner = document.getElementById('cookieBanner');
+  const accept = document.getElementById('cookieAccept');
+  const refuse = document.getElementById('cookieRefuse');
+  if(!banner) return;
+
+  const consent = localStorage.getItem('na_cookie_consent');
+  if(!consent){
+    setTimeout(()=> banner.classList.add('show'), 2000);
+  }
+
+  function dismiss(val){
+    localStorage.setItem('na_cookie_consent', val);
+    banner.style.transform = 'translateX(-50%) translateY(120%)';
+    setTimeout(()=> banner.remove(), 700);
+  }
+
+  accept.addEventListener('click', ()=> dismiss('accepted'));
+  refuse.addEventListener('click', ()=> dismiss('refused'));
+})();
+
+/* ── EASTER EGG — Konami code: ↑↑↓↓←→←→BA + logo triple click */
+(function(){
+  const ee = document.getElementById('easterEgg');
+  if(!ee) return;
+
+  // Konami code
+  const konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  let ki = 0;
+  document.addEventListener('keydown', e => {
+    if(e.key === konami[ki]){ ki++; } else { ki = 0; }
+    if(ki === konami.length){ ki = 0; ee.classList.add('show'); }
+  });
+
+  // Triple click on nav logo
+  let clicks = 0, clickTimer;
+  const logo = document.querySelector('.nav-logo');
+  if(logo){
+    logo.addEventListener('click', e => {
+      if(logo.getAttribute('href') === '#hero'){ e.preventDefault(); }
+      clicks++;
+      clearTimeout(clickTimer);
+      clickTimer = setTimeout(()=>{ clicks = 0; }, 600);
+      if(clicks >= 3){ clicks = 0; ee.classList.add('show'); }
+    });
+  }
+
+  // Close on backdrop click
+  ee.addEventListener('click', e => { if(e.target === ee) ee.classList.remove('show'); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') ee.classList.remove('show'); });
+})();
+
+/* ── COUNTER — add flash on complete */
+const _origAnimCount = typeof animCount !== 'undefined' ? animCount : null;
+document.querySelectorAll('[data-count]').forEach(el => {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        const target = parseInt(el.dataset.count), suffix = el.dataset.suffix||'';
+        const dur=1400,steps=50,inc=target/steps,interval=dur/steps;
+        let cur=0;
+        const t=setInterval(()=>{
+          cur=Math.min(cur+inc,target);
+          el.textContent=Math.round(cur)+suffix;
+          if(cur>=target){ clearInterval(t); el.classList.add('counted'); }
+        },interval);
+        obs.unobserve(el);
+      }
+    });
+  },{threshold:.5});
+  obs.observe(el);
+});
+
+/* ── PORTRAIT PHOTO */
+(function(){
+  const img = document.getElementById('portraitImg');
+  const placeholder = document.getElementById('portraitPlaceholder');
+  if(!img) return;
+  const src = img.dataset.src || img.src;
+  if(!src || src === '' || src === window.location.href) return; // no photo set
+  img.src = src;
+  img.addEventListener('load', () => {
+    img.classList.add('loaded');
+    if(placeholder) placeholder.style.opacity = '0';
+  });
+  img.addEventListener('error', () => { /* keep placeholder */ });
+})();
 
 /* NAV ACTIVE */
 const secs=document.querySelectorAll('section[id]');
