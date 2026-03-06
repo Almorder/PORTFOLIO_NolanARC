@@ -328,10 +328,11 @@ section{padding:7rem 6vw;position:relative;}
   color:var(--bg);background:var(--orange);
   padding:.45rem 1rem;text-decoration:none;
   opacity:0;transform:translateY(6px);
+  pointer-events:none;
   transition:opacity .35s .08s,transform .35s .08s,background .25s;
   white-space:nowrap;flex-shrink:0;
 }
-.work-item:hover .work-voir{opacity:1;transform:none;}
+.work-item:hover .work-voir{opacity:1;transform:none;pointer-events:auto;}
 .work-voir:hover{background:#e04e0e;color:var(--bg);}
 /* En vue liste, on masque le bouton */
 #workGrid.list-view .work-voir{display:none;}
