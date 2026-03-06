@@ -45,6 +45,8 @@ nav{padding:1.8rem 6vw;display:flex;align-items:center;justify-content:space-bet
 .info-block{background:var(--card);border:1px solid var(--faint);border-left:2px solid var(--orange);padding:2rem 2.5rem;margin:2rem 0;}
 .info-block .legal-p{margin-bottom:.4rem;}
 .info-block .legal-p:last-child{margin-bottom:0;}
+.notice-block{background:rgba(204,70,12,.05);border:1px solid rgba(204,70,12,.2);padding:1.5rem 2rem;margin:2rem 0;}
+.notice-block .legal-p{margin-bottom:0;color:var(--light);}
 footer{padding:2rem 6vw;border-top:1px solid var(--faint);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
 .foot-logo{font-family:var(--title);font-size:.9rem;color:var(--muted);}
 .foot-logo em{color:var(--orange);font-style:normal;}
@@ -53,13 +55,14 @@ footer{padding:2rem 6vw;border-top:1px solid var(--faint);display:flex;align-ite
 </style>
 </head>
 <body>
+
 <nav>
-  <a href="index.html" class="nav-logo">Nolan<em>.Arc</em></a>
-  <a href="index.html" class="nav-back">Retour au site</a>
+  <a href="/" class="nav-logo">Nolan<em>.Arc</em></a>
+  <a href="/" class="nav-back">Retour au site</a>
 </nav>
 
 <div class="page-hero">
-  <h1>Mentions légales<br><em>& Confidentialité</em></h1>
+  <h1>Mentions légales<br><em>&amp; Confidentialité</em></h1>
   <p>Dernière mise à jour : mars 2026</p>
 </div>
 
@@ -70,11 +73,8 @@ footer{padding:2rem 6vw;border-top:1px solid var(--faint);display:flex;align-ite
     <h2 class="legal-h2">1. Éditeur du site</h2>
     <div class="info-block">
       <p class="legal-p"><strong>Nom :</strong> Nolan Arc</p>
-      <p class="legal-p"><strong>Statut :</strong> Auto-entrepreneur / Micro-entreprise
-        <!-- Remplace par : SASU / EURL / etc. selon ton statut réel -->
-      </p>
-      <p class="legal-p"><strong>SIRET :</strong> 987 648 664 00017
-      </p>
+      <p class="legal-p"><strong>Statut :</strong> Auto-entrepreneur / Micro-entreprise</p>
+      <p class="legal-p"><strong>SIRET :</strong> 987 648 664 00017</p>
       <p class="legal-p"><strong>Activité :</strong> Réalisation audiovisuelle, direction artistique</p>
       <p class="legal-p"><strong>Email :</strong> <a href="mailto:nolanribcontact@gmail.com">nolanribcontact@gmail.com</a></p>
       <p class="legal-p"><strong>Site :</strong> <a href="https://nolanarc.com">nolanarc.com</a></p>
@@ -92,6 +92,7 @@ footer{padding:2rem 6vw;border-top:1px solid var(--faint);display:flex;align-ite
       <p class="legal-p"><strong>Adresse :</strong> 512 Second Street, Suite 200, San Francisco, CA 94107, États-Unis</p>
       <p class="legal-p"><strong>Site :</strong> <a href="https://www.netlify.com" target="_blank">netlify.com</a></p>
     </div>
+    <p class="legal-p">Le nom de domaine <strong>nolanarc.com</strong> est enregistré auprès de Porkbun LLC, 2035 Sunset Lake Road, Newark, DE 19702, États-Unis.</p>
   </div>
 
   <!-- 3. PROPRIÉTÉ INTELLECTUELLE -->
@@ -104,10 +105,10 @@ footer{padding:2rem 6vw;border-top:1px solid var(--faint);display:flex;align-ite
 
   <!-- 4. DONNÉES PERSONNELLES & RGPD -->
   <div class="legal-section">
-    <h2 class="legal-h2">4. Données personnelles & RGPD</h2>
+    <h2 class="legal-h2">4. Données personnelles &amp; RGPD</h2>
     <p class="legal-p">Conformément au Règlement Général sur la Protection des Données (RGPD — UE 2016/679) et à la loi Informatique et Libertés du 6 janvier 1978 modifiée, vous disposez de droits sur vos données personnelles.</p>
 
-    <h3 class="legal-h3">Données collectées</h3>
+    <h3 class="legal-h3">Données collectées via le formulaire de contact</h3>
     <p class="legal-p">Lorsque vous utilisez le formulaire de contact, les données suivantes sont collectées :</p>
     <ul class="legal-list">
       <li>Prénom</li>
@@ -117,14 +118,18 @@ footer{padding:2rem 6vw;border-top:1px solid var(--faint);display:flex;align-ite
     </ul>
     <p class="legal-p">Ces données sont uniquement utilisées pour répondre à votre demande. Elles ne sont ni revendues, ni partagées avec des tiers à des fins commerciales.</p>
 
-    <h3 class="legal-h3">Traitement des données</h3>
-    <p class="legal-p">Le formulaire de contact utilise le service <strong>Formspree</strong> (Formspree, Inc., États-Unis). En soumettant le formulaire, vous acceptez que vos données transitent par les serveurs de Formspree. Politique de confidentialité Formspree : <a href="https://formspree.io/legal/privacy-policy" target="_blank">formspree.io/legal/privacy-policy</a></p>
+    <h3 class="legal-h3">Données collectées via Google Analytics</h3>
+    <p class="legal-p">Ce site utilise Google Analytics pour mesurer l'audience de manière anonymisée. Les données collectées incluent : pages visitées, durée de session, pays d'origine, type d'appareil. Ces données ne permettent pas de vous identifier personnellement.</p>
+    <p class="legal-p">Vous pouvez désactiver Google Analytics via l'extension navigateur officielle : <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">tools.google.com/dlpage/gaoptout</a></p>
+
+    <h3 class="legal-h3">Traitement du formulaire</h3>
+    <p class="legal-p">Le formulaire de contact utilise le service <strong>Formspree</strong> (Formspree, Inc., États-Unis). En soumettant le formulaire, vous acceptez que vos données transitent par les serveurs de Formspree. Politique de confidentialité : <a href="https://formspree.io/legal/privacy-policy" target="_blank">formspree.io/legal/privacy-policy</a></p>
 
     <h3 class="legal-h3">Prise de rendez-vous</h3>
     <p class="legal-p">La prise de rendez-vous en ligne utilise le service <strong>Calendly</strong> (Calendly LLC, États-Unis). En réservant un créneau, vous communiquez votre nom, prénom et adresse email à Calendly. Politique de confidentialité : <a href="https://calendly.com/legal/privacy-notice" target="_blank">calendly.com/legal/privacy-notice</a></p>
 
     <h3 class="legal-h3">Durée de conservation</h3>
-    <p class="legal-p">Vos données sont conservées pour la durée nécessaire au traitement de votre demande, et au maximum 3 ans à compter du dernier contact.</p>
+    <p class="legal-p">Vos données de contact sont conservées pour la durée nécessaire au traitement de votre demande, et au maximum 3 ans à compter du dernier contact. Les données Analytics sont conservées 26 mois par Google.</p>
 
     <h3 class="legal-h3">Vos droits</h3>
     <p class="legal-p">Conformément au RGPD, vous disposez des droits suivants :</p>
@@ -142,9 +147,17 @@ footer{padding:2rem 6vw;border-top:1px solid var(--faint);display:flex;align-ite
   <!-- 5. COOKIES -->
   <div class="legal-section">
     <h2 class="legal-h2">5. Cookies</h2>
-    <p class="legal-p">Ce site n'utilise <strong>aucun cookie de traçage ou publicitaire</strong>.</p>
-    <p class="legal-p">Des cookies techniques strictement nécessaires au fonctionnement du site peuvent être déposés. Ils ne collectent aucune donnée personnelle identifiable.</p>
-    <p class="legal-p">Les vidéos intégrées depuis YouTube ou Vimeo peuvent déposer leurs propres cookies lors de leur lecture. Ces cookies sont soumis aux politiques de confidentialité de Google et Vimeo respectivement.</p>
+
+    <h3 class="legal-h3">Cookies de mesure d'audience</h3>
+    <div class="notice-block">
+      <p class="legal-p">Ce site utilise <strong>Google Analytics</strong>, qui dépose des cookies de mesure d'audience pour analyser le trafic de manière anonymisée. Ces cookies ne servent pas à vous identifier personnellement ni à vous cibler publicitairement.</p>
+    </div>
+
+    <h3 class="legal-h3">Cookies vidéo</h3>
+    <p class="legal-p">Les vidéos intégrées depuis <strong>YouTube</strong> ou <strong>Vimeo</strong> peuvent déposer leurs propres cookies lors de leur lecture. Ces cookies sont soumis aux politiques de confidentialité de Google et Vimeo respectivement.</p>
+
+    <h3 class="legal-h3">Aucun cookie publicitaire</h3>
+    <p class="legal-p">Ce site ne dépose aucun cookie publicitaire ou de ciblage commercial.</p>
   </div>
 
   <!-- 6. SERVICES TIERS -->
@@ -152,12 +165,14 @@ footer{padding:2rem 6vw;border-top:1px solid var(--faint);display:flex;align-ite
     <h2 class="legal-h2">6. Services tiers</h2>
     <p class="legal-p">Ce site utilise les services suivants :</p>
     <ul class="legal-list">
-      <li><strong>Google Fonts</strong> — chargement des polices de caractères. <a href="https://policies.google.com/privacy" target="_blank">Politique de confidentialité Google</a></li>
+      <li><strong>Google Analytics</strong> (Google LLC) — mesure d'audience anonymisée. <a href="https://policies.google.com/privacy" target="_blank">Politique de confidentialité Google</a></li>
+      <li><strong>Google Fonts</strong> (Google LLC) — chargement des polices de caractères. <a href="https://policies.google.com/privacy" target="_blank">Politique de confidentialité Google</a></li>
       <li><strong>YouTube</strong> (Google LLC) — hébergement des vidéos. <a href="https://policies.google.com/privacy" target="_blank">Politique de confidentialité Google</a></li>
       <li><strong>Vimeo</strong> — hébergement des vidéos. <a href="https://vimeo.com/privacy" target="_blank">Politique de confidentialité Vimeo</a></li>
       <li><strong>Formspree</strong> — traitement des formulaires de contact. <a href="https://formspree.io/legal/privacy-policy" target="_blank">Politique de confidentialité Formspree</a></li>
       <li><strong>Calendly</strong> — prise de rendez-vous en ligne. <a href="https://calendly.com/legal/privacy-notice" target="_blank">Politique de confidentialité Calendly</a></li>
       <li><strong>Netlify</strong> — hébergement du site. <a href="https://www.netlify.com/privacy/" target="_blank">Politique de confidentialité Netlify</a></li>
+      <li><strong>Porkbun</strong> — registrar du nom de domaine. <a href="https://porkbun.com/policies/privacy" target="_blank">Politique de confidentialité Porkbun</a></li>
     </ul>
   </div>
 
@@ -172,4 +187,14 @@ footer{padding:2rem 6vw;border-top:1px solid var(--faint);display:flex;align-ite
   <div class="legal-section">
     <h2 class="legal-h2">8. Droit applicable</h2>
     <p class="legal-p">Le présent site et ses mentions légales sont soumis au droit français. Tout litige relatif à son utilisation sera de la compétence exclusive des tribunaux français.</p>
-    <p cl
+  </div>
+
+</div>
+
+<footer>
+  <span class="foot-logo">Nolan<em>.</em>Arc</span>
+  <span class="foot-copy">© 2026 · Tous droits réservés</span>
+</footer>
+
+</body>
+</html>
