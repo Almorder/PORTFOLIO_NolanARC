@@ -321,6 +321,20 @@ section{padding:7rem 6vw;position:relative;}
 .work-tag{font-family:var(--head);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:.5rem;}
 .work-title{font-family:var(--title);font-size:1.1rem;font-style:italic;color:var(--white);margin-bottom:.4rem;line-height:1.2;}
 .work-sub{font-family:var(--body);font-size:.96rem;color:var(--mid);}
+.work-overlay-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-top:.6rem;}
+.work-voir{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--head);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--bg);background:var(--orange);
+  padding:.45rem 1rem;text-decoration:none;
+  opacity:0;transform:translateY(6px);
+  transition:opacity .35s .08s,transform .35s .08s,background .25s;
+  white-space:nowrap;flex-shrink:0;
+}
+.work-item:hover .work-voir{opacity:1;transform:none;}
+.work-voir:hover{background:#e04e0e;color:var(--bg);}
+/* En vue liste, on masque le bouton */
+#workGrid.list-view .work-voir{display:none;}
 .work-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border:1px solid rgba(240,235,226,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s,border-color .3s;}
 .work-item:hover .work-play{opacity:1;}
 .work-play::after{content:'';border-left:14px solid var(--white);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px;}
@@ -1660,7 +1674,8 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
          data-title="Titre du projet"
          data-tag="Film de marque"
          data-sub="Client · Année"
-         data-mood="cinematique">
+         data-mood="cinematique"
+         data-projet="NOM-DU-PROJET">
       <div class="work-thumb">
         <div class="work-thumb-inner">
           <div class="work-placeholder">01</div>
@@ -1671,8 +1686,13 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
       <div class="work-play"></div>
       <div class="work-overlay">
         <div class="work-tag">Film de marque</div>
-        <div class="work-title">Titre du projet</div>
-        <div class="work-sub">Client · Année</div>
+        <div class="work-overlay-bottom">
+          <div>
+            <div class="work-title">Titre du projet</div>
+            <div class="work-sub">Client · Année</div>
+          </div>
+          <a href="/projet/NOM-DU-PROJET/" class="work-voir" onclick="event.stopPropagation()">Voir →</a>
+        </div>
       </div>
     </div>
 
@@ -1683,7 +1703,8 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
          data-title="Titre du projet"
          data-tag="Mariage"
          data-sub="Lieu · Année"
-         data-mood="intime">
+         data-mood="intime"
+         data-projet="NOM-DU-PROJET">
       <div class="work-thumb">
         <div class="work-thumb-inner">
           <div class="work-placeholder">02</div>
@@ -1694,8 +1715,13 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
       <div class="work-play"></div>
       <div class="work-overlay">
         <div class="work-tag">Mariage</div>
-        <div class="work-title">Titre du projet</div>
-        <div class="work-sub">Lieu · Année</div>
+        <div class="work-overlay-bottom">
+          <div>
+            <div class="work-title">Titre du projet</div>
+            <div class="work-sub">Lieu · Année</div>
+          </div>
+          <a href="/projet/NOM-DU-PROJET/" class="work-voir" onclick="event.stopPropagation()">Voir →</a>
+        </div>
       </div>
     </div>
 
@@ -1705,7 +1731,8 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
          data-platform="vimeo"
          data-title="Titre du projet"
          data-tag="Direction artistique"
-         data-sub="Client · Année">
+         data-sub="Client · Année"
+         data-projet="NOM-DU-PROJET">
       <div class="work-thumb">
         <div class="work-thumb-inner">
           <div class="work-placeholder">03</div>
@@ -1716,8 +1743,13 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
       <div class="work-play"></div>
       <div class="work-overlay">
         <div class="work-tag">Direction artistique</div>
-        <div class="work-title">Titre du projet</div>
-        <div class="work-sub">Client · Année</div>
+        <div class="work-overlay-bottom">
+          <div>
+            <div class="work-title">Titre du projet</div>
+            <div class="work-sub">Client · Année</div>
+          </div>
+          <a href="/projet/NOM-DU-PROJET/" class="work-voir" onclick="event.stopPropagation()">Voir →</a>
+        </div>
       </div>
     </div>
 
@@ -1727,7 +1759,8 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
          data-platform="youtube"
          data-title="Titre du projet"
          data-tag="Film institutionnel"
-         data-sub="Client · Année">
+         data-sub="Client · Année"
+         data-projet="NOM-DU-PROJET">
       <div class="work-thumb">
         <div class="work-thumb-inner">
           <div class="work-placeholder">04</div>
@@ -1738,8 +1771,13 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
       <div class="work-play"></div>
       <div class="work-overlay">
         <div class="work-tag">Film institutionnel</div>
-        <div class="work-title">Titre du projet</div>
-        <div class="work-sub">Client · Année</div>
+        <div class="work-overlay-bottom">
+          <div>
+            <div class="work-title">Titre du projet</div>
+            <div class="work-sub">Client · Année</div>
+          </div>
+          <a href="/projet/NOM-DU-PROJET/" class="work-voir" onclick="event.stopPropagation()">Voir →</a>
+        </div>
       </div>
     </div>
 
@@ -1749,7 +1787,8 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
          data-platform="youtube"
          data-title="Titre du projet"
          data-tag="Demande en mariage"
-         data-sub="Lieu · Année">
+         data-sub="Lieu · Année"
+         data-projet="NOM-DU-PROJET">
       <div class="work-thumb">
         <div class="work-thumb-inner">
           <div class="work-placeholder">05</div>
@@ -1760,8 +1799,13 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
       <div class="work-play"></div>
       <div class="work-overlay">
         <div class="work-tag">Demande en mariage</div>
-        <div class="work-title">Titre du projet</div>
-        <div class="work-sub">Lieu · Année</div>
+        <div class="work-overlay-bottom">
+          <div>
+            <div class="work-title">Titre du projet</div>
+            <div class="work-sub">Lieu · Année</div>
+          </div>
+          <a href="/projet/NOM-DU-PROJET/" class="work-voir" onclick="event.stopPropagation()">Voir →</a>
+        </div>
       </div>
     </div>
 
@@ -1771,7 +1815,8 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
          data-platform="vimeo"
          data-title="Titre du projet"
          data-tag="Contenu social"
-         data-sub="Client · Année">
+         data-sub="Client · Année"
+         data-projet="NOM-DU-PROJET">
       <div class="work-thumb">
         <div class="work-thumb-inner">
           <div class="work-placeholder">06</div>
@@ -1782,8 +1827,13 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
       <div class="work-play"></div>
       <div class="work-overlay">
         <div class="work-tag">Contenu social</div>
-        <div class="work-title">Titre du projet</div>
-        <div class="work-sub">Client · Année</div>
+        <div class="work-overlay-bottom">
+          <div>
+            <div class="work-title">Titre du projet</div>
+            <div class="work-sub">Client · Année</div>
+          </div>
+          <a href="/projet/NOM-DU-PROJET/" class="work-voir" onclick="event.stopPropagation()">Voir →</a>
+        </div>
       </div>
     </div>
 
@@ -1793,7 +1843,8 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
          data-platform="youtube"
          data-title="Titre du projet"
          data-tag="Stratégie visuelle"
-         data-sub="Client · Année">
+         data-sub="Client · Année"
+         data-projet="NOM-DU-PROJET">
       <div class="work-thumb">
         <div class="work-thumb-inner">
           <div class="work-placeholder">07</div>
@@ -1804,8 +1855,13 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
       <div class="work-play"></div>
       <div class="work-overlay">
         <div class="work-tag">Stratégie visuelle</div>
-        <div class="work-title">Titre du projet</div>
-        <div class="work-sub">Client · Année</div>
+        <div class="work-overlay-bottom">
+          <div>
+            <div class="work-title">Titre du projet</div>
+            <div class="work-sub">Client · Année</div>
+          </div>
+          <a href="/projet/NOM-DU-PROJET/" class="work-voir" onclick="event.stopPropagation()">Voir →</a>
+        </div>
       </div>
     </div>
 
@@ -2650,6 +2706,12 @@ document.querySelectorAll('.work-item[data-video]').forEach(item=>{
   if(tag)item.querySelector('.work-tag').textContent=tag;
   if(title)item.querySelector('.work-title').textContent=title;
   if(sub)item.querySelector('.work-sub').textContent=sub;
+  // Mettre à jour le lien "Voir le projet"
+  const slug=item.dataset.projet;
+  const voirBtn=item.querySelector('.work-voir');
+  if(voirBtn&&slug&&!slug.includes('NOM-DU')){
+    voirBtn.href='/projet/'+slug+'/';
+  }
 });
 
 /* ── VIDEO MODAL */
