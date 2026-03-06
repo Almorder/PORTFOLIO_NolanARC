@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /mentions-legales.html
+
+# Sitemap
+Sitemap: https://nolanarc.com/sitemap.xml
+
+# YouTube channel — help Google associate
+# https://www.youtube.com/@nolanarc
