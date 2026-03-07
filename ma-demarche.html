@@ -1444,6 +1444,11 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
 
 .testi-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
 .testi-avatar{overflow:hidden;flex-shrink:0;}
+
+/* ── PAGE TRANSITION ── */
+#pageTransition{position:fixed;inset:0;background:#080706;z-index:9998;pointer-events:none;opacity:1;transition:opacity .55s cubic-bezier(.16,1,.3,1);}
+#pageTransition.done{opacity:0;}
+body{opacity:1;}
 </style>
 <!-- Styles spécifiques page démarche -->
 <style>
@@ -1642,12 +1647,12 @@ nav.page-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-
     </a>
   </div>
   <div class="foot-contact">
-    <a href="mailto:nolanribcontact@gmail.com" class="foot-email">nolanribcontact@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#4927262528273b202b2a26273d282a3d092e24282025672a2624" class="foot-email"><span class="__cf_email__" data-cfemail="b3dddcdfd2ddc1dad1d0dcddc7d2d0c7f3d4ded2dadf9dd0dcde">[email&#160;protected]</span></a>
   </div>
   <div class="foot-copy">© 2026 · Nolan Arc</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ── PAGE LOADER */
 const loader = document.getElementById('loader');
 const MIN_LOAD = 1200; // ms minimum display
@@ -2317,15 +2322,4 @@ document.querySelectorAll('.mood-btn').forEach(btn => {
   var btn = document.getElementById('backTop');
   if(!btn) return;
   window.addEventListener('scroll', function(){
-    btn.classList.toggle('show', window.scrollY > 500);
-  }, {passive:true});
-  btn.addEventListener('click', function(){
-    var nav = document.querySelector('nav');
-    var target = nav ? nav.offsetTop : 0;
-    window.scrollTo({top: target, behavior:'smooth'});
-  });
-})();
-</script>
-</body>
-
-</html>
+    btn.classList.toggle('show', window.scrollY
