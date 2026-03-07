@@ -270,9 +270,15 @@ section{padding:7rem 6vw;position:relative;}
 .hero-title .dot,.hero-title .arc{color:var(--orange);}
 .hero-title .arc{font-style:italic;}
 .hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:3rem;opacity:0;animation:up .9s 1s both;}
-.hero-claim{font-family:var(--title);font-size:clamp(.88rem,1.2vw,1.05rem);font-style:italic;font-weight:300;color:var(--mid);max-width:460px;line-height:1.85;border-left:1px solid var(--odim);padding-left:1.5rem;}
+.hero-claim{font-family:var(--title);font-size:clamp(.88rem,1.2vw,1.05rem);font-style:italic;font-weight:300;color:var(--mid);max-width:460px;line-height:1.85;}
 .hero-claim strong{color:var(--white);font-style:normal;font-weight:400;}
-.hero-right{display:flex;flex-direction:column;align-items:flex-end;gap:2rem;}
+.hero-left{display:flex;flex-direction:column;gap:.6rem;justify-content:flex-end;}
+.hero-typewriter{margin-bottom:.6rem;}
+.hero-typewriter .typewriter{font-family:var(--title) !important;font-size:clamp(1.1rem,1.8vw,1.5rem) !important;font-style:italic !important;color:var(--orange) !important;display:inline !important;min-height:1.4em;line-height:1.4;}
+
+.hero-right{display:flex;flex-direction:column;align-items:flex-end;gap:2rem;min-width:320px;padding-right:2vw;}
+/* Typewriter — ligne dédiée, visible */
+
 .hero-stats{display:flex;gap:3rem;}
 .hstat{text-align:right;}
 .hstat-n{font-family:var(--title);font-size:2.2rem;font-style:italic;color:var(--orange);line-height:1;}
@@ -364,21 +370,6 @@ section{padding:7rem 6vw;position:relative;}
 .work-cta-link:hover{color:var(--orange);border-color:var(--orange);}
 
 /* ─────────────────────
-   3. MANIFESTE
-───────────────────── */
-#manifeste{background:var(--off);}
-.manifeste-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--faint);margin-top:5rem;}
-.pillar{background:var(--off);padding:2.5rem 3rem;border-bottom:1px solid var(--faint);border-right:1px solid var(--faint);transition:background .4s;}
-.pillar:hover{background:rgba(204,70,12,.03);}
-.pillar:nth-child(even){border-right:none;}
-.pillar-last{background:var(--off);border-right:none;display:flex;align-items:center;justify-content:center;border-bottom:none;}
-.pillar-n{font-family:var(--head);font-size:.74rem;letter-spacing:.18em;color:var(--odim);margin-bottom:1rem;}
-.pillar-title{font-family:var(--title);font-size:1.1rem;font-style:italic;color:var(--white);margin-bottom:.6rem;}
-.pillar-text{font-family:var(--body);font-size:1rem;color:var(--muted);line-height:1.8;}
-.manifeste-declaration{margin-top:3px;padding:4.5rem 5rem;background:linear-gradient(135deg,var(--card) 0%,var(--bg) 100%);border:1px solid var(--faint);border-top:none;font-family:var(--title);font-size:clamp(1.2rem,2vw,1.8rem);font-weight:300;font-style:italic;color:var(--light);line-height:1.55;position:relative;}
-.manifeste-declaration::before{content:'"';position:absolute;top:-1.2rem;left:4rem;font-family:var(--title);font-size:10rem;color:var(--orange);opacity:.13;line-height:1;}
-
-/* ─────────────────────
    4. À PROPOS
 ───────────────────── */
 #about{background:var(--bg);}
@@ -405,54 +396,6 @@ section{padding:7rem 6vw;position:relative;}
 .about-detail:nth-last-child(-n+2){border-bottom:none;}
 .ad-label{font-family:var(--head);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--odim);margin-bottom:.5rem;}
 .ad-val{font-family:var(--title);font-size:1.05rem;font-style:italic;color:var(--grey);}
-
-/* ─────────────────────
-   5. PROCESSUS
-───────────────────── */
-#process{background:var(--off);}
-.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--faint);margin-top:5rem;}
-.process-step{padding:3rem 2.5rem;border-right:1px solid var(--faint);background:linear-gradient(160deg,var(--card) 0%,var(--off) 100%);transition:background .4s;}
-.process-step:last-child{border-right:none;}
-.process-step:hover{background:linear-gradient(160deg,rgba(204,70,12,.07) 0%,var(--off) 80%);}
-.ps-n{font-family:var(--title);font-size:4.5rem;font-weight:300;font-style:italic;color:rgba(204,70,12,.14);line-height:1;margin-bottom:2rem;}
-.ps-title{font-family:var(--head);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:1rem;}
-.ps-desc{font-family:var(--body);font-size:1rem;color:var(--muted);line-height:1.8;}
-
-/* ─────────────────────
-   6. VALEURS
-───────────────────── */
-#valeurs{background:var(--bg);}
-.valeurs-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;margin-top:5rem;align-items:start;}
-.valeur-item{padding:2rem 0;border-bottom:1px solid var(--faint);display:grid;grid-template-columns:2.5rem 1fr;gap:1.5rem;transition:padding .3s;}
-.valeur-item:hover{padding-left:.5rem;}
-.vi-icon{font-size:1rem;color:var(--orange);opacity:.65;margin-top:.1rem;font-family:var(--title);}
-.vi-title{font-family:var(--head);font-size:.86rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:.5rem;}
-.vi-desc{font-family:var(--body);font-size:1rem;color:var(--muted);line-height:1.8;}
-.valeurs-right{position:sticky;top:8rem;display:flex;flex-direction:column;gap:3px;}
-.vq-block{padding:3.5rem;background:linear-gradient(135deg,var(--card) 0%,var(--bg) 100%);border:1px solid var(--faint);border-left:2px solid var(--orange);position:relative;overflow:hidden;}
-.vq-block::before{content:'';position:absolute;top:0;right:0;width:60%;height:100%;background:radial-gradient(ellipse at top right,rgba(204,70,12,.07) 0%,transparent 70%);}
-.vq-text{font-family:var(--title);font-size:1.2rem;font-style:italic;font-weight:300;color:var(--light);line-height:1.65;margin-bottom:2rem;position:relative;}
-.vq-attr{font-family:var(--head);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);position:relative;}
-.son-block{padding:2.5rem;background:var(--card);border:1px solid var(--faint);}
-.son-label{font-family:var(--head);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--odim);margin-bottom:1rem;}
-.son-text{font-family:var(--body);font-size:1rem;color:var(--muted);line-height:1.85;}
-
-/* ─────────────────────
-   7. NOM
-───────────────────── */
-#nom{background:var(--off);text-align:center;}
-.nom-display{font-family:var(--title);font-size:clamp(4.5rem,12vw,11rem);font-weight:400;line-height:.9;letter-spacing:-.02em;color:var(--white);margin-bottom:3rem;}
-.nom-display em{color:var(--orange);font-style:italic;}
-.nom-senses{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--faint);max-width:900px;margin:0 auto 4rem;}
-.nom-sense{padding:2.5rem 2rem;border-right:1px solid var(--faint);transition:background .3s;}
-.nom-sense:last-child{border-right:none;}
-.nom-sense:hover{background:rgba(204,70,12,.04);}
-.ns-n{font-family:var(--head);font-size:.7rem;letter-spacing:.18em;color:var(--odim);margin-bottom:.8rem;}
-.ns-title{font-family:var(--title);font-size:1rem;font-style:italic;color:var(--white);margin-bottom:.6rem;}
-.ns-desc{font-family:var(--body);font-size:.95rem;color:var(--muted);line-height:1.7;}
-.nom-handles{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;}
-.nom-handle{font-family:var(--head);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
-.nom-handle em{color:var(--orange);font-style:normal;}
 
 /* ─────────────────────
    8. CONTACT, DUAL CTA
@@ -628,6 +571,39 @@ footer{background:var(--bg);padding:2.5rem 6vw;border-top:1px solid var(--faint)
   0%,100%{opacity:0;transform:scale(0.8);}
   50%{opacity:1;transform:scale(1.2);}
 }
+
+/* ─────────────────────
+   UX FIXES
+───────────────────── */
+
+/* Scroll progress bar */
+#scrollProgress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--orange),#e04e0e);z-index:9999;transition:width .08s linear;pointer-events:none;box-shadow:0 0 6px rgba(204,70,12,.4);}
+
+/* Page transition */
+#pageTransition{position:fixed;inset:0;background:var(--bg);z-index:9998;pointer-events:none;opacity:0;transition:opacity .45s cubic-bezier(.16,1,.3,1);}
+#pageTransition.entering{opacity:1;pointer-events:all;}
+body.is-transitioning{overflow:hidden;}
+
+/* cursor:pointer manquants */
+.rdv-btn,.scroll-dot,.hero-scroll,.nom-handle,
+.about-detail,.section-cta-btn,.hero-cta-link,
+.foot-soc-link,.foot-email,.cf-submit,.view-btn{cursor:pointer;}
+
+/* Hover scroll-dot amélioré */
+.scroll-dot{transition:background .3s,transform .3s;}
+.scroll-dot:hover{background:rgba(204,70,12,.5) !important;transform:scale(1.4);}
+.scroll-dot.active{background:var(--orange) !important;}
+
+/* Hover rdv-btn */
+.rdv-btn:hover{border-color:var(--orange);color:var(--orange);}
+.rdv-btn:hover::before{transform:translateX(0);}
+
+/* Hover client-item texte */
+.client-name-text{transition:color .3s;}
+.client-item:hover .client-name-text{color:var(--orange);}
+
+/* Focus clavier */
+.wf-btn:focus-visible,.mood-btn:focus-visible,.faq-q:focus-visible,.testi-btn:focus-visible,.cf-submit:focus-visible,.hero-cta-btn:focus-visible{outline:1px solid var(--orange);outline-offset:3px;}
 
 /* ─── ARC ANIMATIONS ─── */
 .arc-bg{animation:arcRotate 40s linear infinite;}
@@ -831,7 +807,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
 @media(max-width:768px){.nav-cta{display:none;}}
 
 /* ─── TYPEWRITER ─── */
-.typewriter{font-style:italic;color:var(--orange);}
+
 .typewriter-cursor{display:inline-block;width:2px;height:1em;background:var(--orange);margin-left:2px;animation:cursorBlink .7s ease infinite alternate;vertical-align:middle;}
 @keyframes cursorBlink{from{opacity:1;}to{opacity:0;}}
 
@@ -936,7 +912,8 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
   .foot-links{flex-wrap:wrap;gap:.8rem;}
   nav .nav-links{display:none;}
   .hero-bottom{flex-direction:column !important;gap:2rem;}
-  .hero-right{width:100%;align-items:flex-start !important;}
+  .hero-left{width:100%;}
+  .hero-right{width:100%;min-width:0 !important;align-items:flex-start !important;}
   .hero-stats{flex-wrap:wrap;}
 }
 @media(max-width:768px){
@@ -973,7 +950,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
 
   /* Hero */
   .hero-bottom{flex-direction:column;align-items:flex-start;gap:2rem;}
-  .hero-right{align-items:flex-start;width:100%;}
+  .hero-right{align-items:flex-start;width:100%;min-width:0 !important;}
   .hero-stats{gap:2rem;flex-wrap:wrap;}
   .hstat{text-align:left;}
   .hero-scroll{display:none;}
@@ -1444,14 +1421,6 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
 .testi-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
 .testi-avatar{overflow:hidden;flex-shrink:0;}
 </style>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EBFDQNBW60"></script>
-<script>
-  window.dataLayer=window.dataLayer||[];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js',new Date());
-  gtag('config','G-EBFDQNBW60');
-</script>
 </head>
 <body>
 <!-- BACK TO TOP -->
@@ -1459,6 +1428,8 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
 
 <!-- PAGE TRANSITION -->
 <div id="pageTransition"></div>
+<!-- SCROLL PROGRESS -->
+<div id="scrollProgress"></div>
 <!-- CURSOR -->
 <div id="cur"></div><div id="cur-ring"></div><div id="prog"></div>
 <!-- EASTER EGG -->
@@ -1581,10 +1552,24 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
   <div class="hero-kicker">Réalisateur · Films de marque · Événementiel</div>
   <h1 class="hero-title">Nolan<span class="dot">.</span><span class="arc">Arc</span></h1>
   <div class="hero-bottom">
-    <p class="hero-claim">
-      <span class="typewriter" data-words='["Films de marque.", "Événementiel.", "Direction artistique.", "Authenticité rendue belle."]' ></span><br><br>
-      Ce qui ne se revit pas, <strong>je le capture.</strong>
-    </p>
+    <div class="hero-left">
+      <div class="hero-typewriter"><span id="tw" style="color:#cc460c;font-style:italic;font-family:'Yrsa',serif;font-size:clamp(1.1rem,1.8vw,1.5rem);"></span><span id="tw-cursor" class="typewriter-cursor"></span></div>
+<script>
+(function(){
+  var tw=document.getElementById('tw');
+  if(!tw)return;
+  var words=['Je regarde ce qu\'on ne voit pas.','Même les marques ont une histoire.','Tout s\'estompe, sauf les images.','Les détails qui changent tout.','Le vrai suffit souvent.','Si on filme, c\'est pour raconter.'];
+  var i=0,c=0,del=false;
+  function tick(){
+    var w=words[i];
+    if(!del){tw.textContent=w.slice(0,++c);if(c===w.length){del=true;setTimeout(tick,1800);return;}setTimeout(tick,65);}
+    else{tw.textContent=w.slice(0,--c);if(c===0){del=false;i=(i+1)%words.length;setTimeout(tick,380);return;}setTimeout(tick,34);}
+  }
+  tick();
+})();
+</script>
+      <p class="hero-claim">Ce qui ne se revit pas, <strong>je le capture.</strong></p>
+    </div>
     <div class="hero-right">
       <div class="hero-stats">
         <div class="hstat">
@@ -2162,7 +2147,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
         <li>Stratégie contenu</li>
         <li>Direction artistique</li>
       </ul>
-      <a href="mailto:nolanribcontact@gmail.com?subject=Film de marque" class="cl-cta filled"><span>Je suis une marque</span><span>→</span></a>
+      <a href="mailto:nolanribcontact@gmail.com?subject=Film%20de%20marque&body=Bonjour%20Nolan%2C%0A%0AJe%20vous%20contacte%20car%20j%27ai%20un%20projet%20de%20film%20de%20marque.%0A%0AMon%20entreprise%20/%20ma%20marque%20%3A%20%0ACe%20que%20je%20veux%20transmettre%20%3A%20%0AMon%20budget%20approximatif%20%3A%20%0AMa%20deadline%20%3A%20%0A%0AAu%20plaisir%20d%27%C3%A9changer%2C" class="cl-cta filled" onclick="preselectForm('Film de marque')"><span>Je suis une marque</span><span>→</span></a>
     </div>
     <div class="contact-lane event">
       <div class="cl-tag">Pour les moments de vie</div>
@@ -2174,7 +2159,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
         <li>Moments de vie</li>
         <li>Souvenir sur mesure</li>
       </ul>
-      <a href="mailto:nolanribcontact@gmail.com?subject=Film de mariage" class="cl-cta"><span>J'ai un moment à capturer</span><span>→</span></a>
+      <a href="mailto:nolanribcontact@gmail.com?subject=Film%20de%20mariage&body=Bonjour%20Nolan%2C%0A%0AJe%20vous%20contacte%20car%20j%27ai%20un%20moment%20important%20%C3%A0%20capturer.%0A%0AType%20de%20projet%20%28mariage%2C%20demande%2C%20moment%20de%20vie...%29%20%3A%20%0ALa%20date%20%3A%20%0ALe%20lieu%20%3A%20%0ACe%20qui%20compte%20le%20plus%20pour%20moi%20%3A%20%0A%0AAu%20plaisir%20d%27%C3%A9changer%2C" class="cl-cta" onclick="preselectForm('Mariage / Événementiel')"><span>J'ai un moment à capturer</span><span>→</span></a>
     </div>
   </div>
 
@@ -2289,7 +2274,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
         <span class="faq-q-text">Tu as des tarifs indicatifs ?</span>
         <span class="faq-q-icon">+</span>
       </button>
-      <div class="faq-a"><div class="faq-a-inner">Chaque projet est différent, je ne travaille pas sur catalogue. Dis-moi ce que tu as en tête et je te fais une proposition adaptée. Ce qui compte, c'est qu'on soit alignés sur la vision avant de parler budget.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">Chaque projet est différent, je ne travaille pas sur catalogue. Dis-moi ce que tu as en tête et je te fais une proposition adaptée. Ce qui compte, c'est qu'on soit alignés sur la vision avant de parler budget.<br><br><a href="#contact" style="color:var(--orange);font-family:var(--head);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;">→ Me parler de ton projet</a></div></div>
     </div>
     <div class="faq-item">
       <button class="faq-q">
@@ -2350,18 +2335,22 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ── PAGE LOADER */
 const loader = document.getElementById('loader');
-const MIN_LOAD = 1200; // ms minimum display
+const MIN_LOAD = 1200;
 const startTime = Date.now();
-window.addEventListener('load', () => {
-  const elapsed = Date.now() - startTime;
-  const remaining = Math.max(0, MIN_LOAD - elapsed);
-  setTimeout(() => {
-    loader.classList.add('hide');
+const alreadyVisited = sessionStorage.getItem('nolan_visited');
+if(alreadyVisited && loader){
+  loader.style.display = 'none';
+} else {
+  window.addEventListener('load', () => {
+    sessionStorage.setItem('nolan_visited','1');
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(0, MIN_LOAD - elapsed);
     setTimeout(() => {
-      loader.style.display = 'none';
-    }, 700);
-  }, remaining);
-});
+      loader.classList.add('hide');
+      setTimeout(() => { loader.style.display = 'none'; }, 700);
+    }, remaining);
+  });
+}
 
 /* ── PAGE TRANSITIONS */
 const pageTransition = document.getElementById('pageTransition');
@@ -2499,7 +2488,13 @@ if(cur){
 
 /* PROGRESS */
 const prog=document.getElementById('prog');
-if(prog) window.addEventListener('scroll',()=>{prog.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';},{ passive:true });
+const scrollBar=document.getElementById('scrollProgress');
+function updateProgress(){
+  const pct=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';
+  if(prog) prog.style.width=pct;
+  if(scrollBar) scrollBar.style.width=pct;
+}
+window.addEventListener('scroll', updateProgress, {passive:true});
 
 /* REVEAL */
 const io=new IntersectionObserver(entries=>{
@@ -2824,6 +2819,16 @@ function setView(mode, btn) {
   });
 })();
 
+/* ── TYPEWRITER — voir script inline dans le HTML */
+
+
+/* ── PRESELECT FORM */
+function preselectForm(type){
+  var radios = document.querySelectorAll('input[name="type"]');
+  radios.forEach(function(r){ r.checked = (r.value === type); });
+  var form = document.getElementById('contactFormWrap');
+  if(form){ setTimeout(function(){ form.scrollIntoView({behavior:'smooth', block:'start'}); }, 120); }
+}
 /* ── MOOD FILTERS */
 document.querySelectorAll('.mood-btn').forEach(btn => {
   btn.addEventListener('click', () => {
