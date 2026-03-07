@@ -204,6 +204,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 /* SHARED */
 section{padding:7rem 6vw;position:relative;}
+#hero{width:100%;display:flex;flex-direction:column;justify-content:center;padding:10rem 6vw 6rem !important;margin-top:0 !important;}
 .thin{border:none;border-top:1px solid var(--faint);margin:0 6vw;}
 .eyebrow{font-family:var(--head);font-size:.95rem;letter-spacing:.24em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem;}
 .eyebrow::before{content:'';width:22px;height:1px;background:var(--orange);}
@@ -256,7 +257,7 @@ section{padding:7rem 6vw;position:relative;}
 /* ─────────────────────
    1. HERO
 ───────────────────── */
-#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 6vw 5vh;overflow:hidden;}
+#hero{min-height:85vh;width:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:0 6vw 5vh;overflow:hidden;position:relative;}
 .arc-bg{position:absolute;border-radius:50%;pointer-events:none;top:50%;left:-20%;transform:translateY(-50%);}
 .arc-bg:nth-child(1){width:140vw;height:140vw;border:1px solid rgba(204,70,12,.022);}
 .arc-bg:nth-child(2){width:100vw;height:100vw;border:1px solid rgba(204,70,12,.045);}
@@ -276,8 +277,19 @@ section{padding:7rem 6vw;position:relative;}
 .hstat{text-align:right;}
 .hstat-n{font-family:var(--title);font-size:2.2rem;font-style:italic;color:var(--orange);line-height:1;}
 .hstat-l{font-family:var(--head);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:.3rem;}
-.hero-scroll{font-family:var(--head);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl;display:flex;align-items:center;gap:.8rem;}
-.hero-scroll::after{content:'';display:block;width:1px;height:50px;background:linear-gradient(180deg,var(--grey),var(--orange),transparent);animation:pulse 2s ease infinite alternate;}
+.hero-scroll{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.7rem;
+  text-decoration:none;cursor:pointer;
+  opacity:0;animation:up .9s 1.4s both;
+  z-index:4;
+}
+.hero-scroll-label{font-family:var(--head);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);transition:color .3s;}
+.hero-scroll:hover .hero-scroll-label{color:var(--orange);}
+.hero-scroll-arrow{width:28px;height:28px;border:1px solid rgba(240,235,226,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .3s;}
+.hero-scroll:hover .hero-scroll-arrow{border-color:var(--orange);}
+.hero-scroll-arrow::after{content:'';display:block;width:7px;height:7px;border-right:1px solid var(--orange);border-bottom:1px solid var(--orange);transform:rotate(45deg) translateY(-2px);animation:bounce-down 1.6s ease infinite;}
+@keyframes bounce-down{0%,100%{transform:rotate(45deg) translateY(-2px);}50%{transform:rotate(45deg) translateY(3px);}}
 
 /* ─────────────────────
    MARQUEE
@@ -900,6 +912,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
 
 /* ─── RESPONSIVE MOBILE RENFORCÉ ─── */
 @media(max-width:480px){
+  #hero{aspect-ratio:unset;padding:8rem 5vw 4rem !important;justify-content:center !important;}
   .hero-title{font-size:clamp(3.5rem,18vw,8rem) !important;}
   .s-title{font-size:clamp(1.6rem,6vw,3rem) !important;}
   section{padding:4rem 5vw;}
@@ -1500,12 +1513,12 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
   <a href="#work" onclick="closeMobile()">Work</a>
-  <a href="#services" onclick="closeMobile()">Services</a>
   <a href="#clients" onclick="closeMobile()">Clients</a>
   <a href="#testimonials" onclick="closeMobile()">Avis</a>
-  <a href="#manifeste" onclick="closeMobile()">Manifeste</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
   <a href="#about" onclick="closeMobile()">À propos</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="/ma-demarche.html" onclick="closeMobile()">Ma démarche</a>
 </div>
 
 <!-- NAV -->
@@ -1513,12 +1526,12 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
   <a href="#hero" class="nav-logo">Nolan<em>.Arc</em></a>
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
-    <li><a href="#services">Services</a></li>
     <li><a href="#clients">Clients</a></li>
     <li><a href="#testimonials">Avis</a></li>
-    <li><a href="#manifeste">Manifeste</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#about">À propos</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="/ma-demarche.html">Ma démarche</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem;">
     <a href="#contact" class="nav-cta"><span>Démarrer un projet →</span></a>
@@ -1551,7 +1564,6 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
       frameborder="0">
     </iframe>
     <div class="hero-reel-placeholder">
-      <!-- Placeholder visible tant que le showreel n'est pas configuré -->
       <div class="reel-placeholder-text">
         <span>Showreel</span>
         <em>Bientôt</em>
@@ -1596,41 +1608,13 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
         <span>◆ Premier échange offert</span>
         <span>◆ Réponse sous 48h</span>
       </div>
-      <div class="hero-scroll">Découvrir</div>
-    </div>
-  </div>
-</section>
-<script>
-/* Typewriter + animé hero — inline, zero dépendance */
-(function(){
-  var words = ['Films de marque.','Événementiel.','Direction artistique.','Authenticité rendue belle.'];
-  var wi=0, ci=0, deleting=false;
-  function tick(){
-    var el = document.querySelector('.typewriter');
-    if(!el) return;
-    var word = words[wi];
-    if(!deleting){
-      el.textContent = word.slice(0,++ci);
-      if(ci===word.length){ deleting=true; setTimeout(tick,1800); return; }
-    } else {
-      el.textContent = word.slice(0,--ci);
-      if(ci===0){ deleting=false; wi=(wi+1)%words.length; setTimeout(tick,400); return; }
-    }
-    setTimeout(tick, deleting?45:80);
-  }
-  // Curseur
-  window.addEventListener('DOMContentLoaded', function(){
-    var el = document.querySelector('.typewriter');
-    if(!el) return;
-    var cur = document.createElement('span');
-    cur.className = 'typewriter-cursor';
-    el.parentNode.insertBefore(cur, el.nextSibling);
-  });
-  // Démarrer après 2200ms : loader dure ~1900ms, +300ms pour animation hero
-  setTimeout(tick, 2200);
-})();
-</script>
 
+    </div>
+  <a href="#work" class="hero-scroll">
+    <span class="hero-scroll-label">Voir le travail</span>
+    <span class="hero-scroll-arrow"></span>
+  </a>
+</section>
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
@@ -1891,54 +1875,6 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
   </div>
 </section>
 
-
-<!-- 2. SERVICES -->
-<section id="services">
-  <div class="eyebrow reveal">Ce que je fais</div>
-  <h2 class="s-title reveal">Deux spécialités.<br><em>Une seule exigence.</em></h2>
-  <p class="s-body reveal">Chaque projet part de la même question : qu'est-ce que le spectateur doit gagner en regardant ça ?</p>
-  <div class="services-grid">
-    <div class="service-card tilt-card reveal">
-      <div class="sc-icon">◈</div>
-      <div class="sc-title">Films de marque</div>
-      <div class="sc-desc">Pour les marques qui se soucient de leur message, de leur image et de la cohérence qu'elles renvoient. Je les accompagne pour affiner leur vision et construire une stratégie qui durera sur le long terme.</div>
-      <ul class="sc-list">
-        <li>Film institutionnel</li><li>Présentation de produit</li>
-        <li>Contenu réseaux sociaux</li><li>Direction artistique</li>
-      </ul>
-    </div>
-    <div class="service-card tilt-card reveal">
-      <div class="sc-icon">◇</div>
-      <div class="sc-title">Événementiel & Moments de vie</div>
-      <div class="sc-desc">Ce qui ne se revit pas, je le capture. Les demandes en mariage, les gens qui se marient pour la vie. Je me place dans leur rythme pour montrer ce qui est réfléchi et symbolique.</div>
-      <ul class="sc-list">
-        <li>Film de mariage</li><li>Demande en mariage</li>
-        <li>Moments de vie</li><li>Souvenirs durables</li>
-      </ul>
-    </div>
-    <div class="service-card tilt-card reveal">
-      <div class="sc-icon">○</div>
-      <div class="sc-title">Direction Artistique</div>
-      <div class="sc-desc">Définir une cohérence visuelle globale : identité, ton, univers. Pour que chaque production s'inscrive dans quelque chose de plus grand que le projet lui-même.</div>
-      <ul class="sc-list">
-        <li>Stratégie visuelle</li><li>Cohérence de marque</li>
-        <li>Conseil créatif</li><li>Accompagnement long terme</li>
-      </ul>
-    </div>
-  </div>
-  <div class="mobile-scroll-hint">
-    <span class="scroll-dot active"></span>
-    <span class="scroll-dot"></span>
-    <span class="scroll-dot"></span>
-    <span class="scroll-label">Glisse pour voir plus →</span>
-  </div>
-</section>
-
-  <div class="section-cta reveal">
-    <div class="section-cta-reassurance"><span>Premier échange offert</span><span>Réponse sous 48h</span><span>Solo · de A à Z</span></div>
-    <a href="#contact" class="section-cta-btn"><em>Démarrer un projet →</em></a>
-  </div>
-
 <!-- CLIENTS -->
 <section id="clients">
   <div class="clients-label reveal">Ils m'ont fait confiance</div>
@@ -1978,7 +1914,6 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
 
   </div>
 </section>
-
 
 <section id="testimonials">
   <div class="eyebrow reveal">Ce qu'ils disent</div>
@@ -2088,51 +2023,57 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
 </section>
 
   <div class="section-cta reveal">
-    <div class="section-cta-reassurance"><span>Premier échange offert</span><span>Réponse sous 48h</span></div>
-    <a href="#contact" class="section-cta-btn"><em>Tu es le prochain →</em></a>
+    <div class="section-cta-reassurance"><span>Premier échange offert</span><span>Réponse sous 48h</span><span>Solo · de A à Z</span></div>
+    <a href="#contact" class="section-cta-btn"><em>Démarrer un projet →</em></a>
   </div>
 
-<!-- 3. MANIFESTE -->
-<section id="manifeste">
-  <div class="eyebrow reveal">Ce en quoi je crois</div>
-  <h2 class="s-title reveal">Mes principes<br><em>de création.</em></h2>
-  <div class="manifeste-grid reveal">
-    <div class="pillar">
-      <div class="pillar-n">01</div>
-      <div class="pillar-title">L'Authenticité Rendue Belle</div>
-      <div class="pillar-text">Je cherche pas à inventer quelque chose. Je cherche à révéler ce qui est déjà là pour le montrer sous son meilleur jour.</div>
+
+<!-- 2. SERVICES -->
+<section id="services">
+  <div class="eyebrow reveal">Ce que je fais</div>
+  <h2 class="s-title reveal">Deux spécialités.<br><em>Une seule exigence.</em></h2>
+  <p class="s-body reveal">Chaque projet part de la même question : qu'est-ce que le spectateur doit gagner en regardant ça ?</p>
+  <div class="services-grid">
+    <div class="service-card tilt-card reveal">
+      <div class="sc-icon">◈</div>
+      <div class="sc-title">Films de marque</div>
+      <div class="sc-desc">Pour les marques qui se soucient de leur message, de leur image et de la cohérence qu'elles renvoient. Je les accompagne pour affiner leur vision et construire une stratégie qui durera sur le long terme.</div>
+      <ul class="sc-list">
+        <li>Film institutionnel</li><li>Présentation de produit</li>
+        <li>Contenu réseaux sociaux</li><li>Direction artistique</li>
+      </ul>
     </div>
-    <div class="pillar">
-      <div class="pillar-n">02</div>
-      <div class="pillar-title">Le Principe de l'Intention</div>
-      <div class="pillar-text">Chaque plan doit avoir une signification pour l'auteur. On décide ce qu'on doit capturer. Pas l'inverse.</div>
+    <div class="service-card tilt-card reveal">
+      <div class="sc-icon">◇</div>
+      <div class="sc-title">Événementiel & Moments de vie</div>
+      <div class="sc-desc">Ce qui ne se revit pas, je le capture. Les demandes en mariage, les gens qui se marient pour la vie. Je me place dans leur rythme pour montrer ce qui est réfléchi et symbolique.</div>
+      <ul class="sc-list">
+        <li>Film de mariage</li><li>Demande en mariage</li>
+        <li>Moments de vie</li><li>Souvenirs durables</li>
+      </ul>
     </div>
-    <div class="pillar">
-      <div class="pillar-n">03</div>
-      <div class="pillar-title">La Règle de l'Invisible</div>
-      <div class="pillar-text">Tout doit être cohérent et fluide. Ce qui est superficiel disparaît. Ce qui fait l'élégance, on le met en priorité.</div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-n">04</div>
-      <div class="pillar-title">Seul, de A à Z</div>
-      <div class="pillar-text">De la conception au rendu, je contrôle tout. Pas par ego, par cohérence. Quand une vision passe par trop de mains, elle perd quelque chose d'essentiel.</div>
-    </div>
-    <div class="pillar" style="border-bottom:none;">
-      <div class="pillar-n">05</div>
-      <div class="pillar-title">Le créateur et son message</div>
-      <div class="pillar-text">Je mets toute ma réflexion dans chaque réalisation. On ne peut pas prédire ce que les gens vont ressentir. On peut juste fortement l'influencer.</div>
-    </div>
-    <div class="pillar pillar-last" style="border-bottom:none;">
-      <div style="text-align:center;">
-        <div style="font-family:var(--title);font-size:6rem;font-style:italic;color:rgba(204,70,12,.12);line-height:1;">Arc</div>
-        <div style="font-family:var(--head);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:.5rem;">Nolan Arc · 2026</div>
-      </div>
+    <div class="service-card tilt-card reveal">
+      <div class="sc-icon">○</div>
+      <div class="sc-title">Direction Artistique</div>
+      <div class="sc-desc">Définir une cohérence visuelle globale : identité, ton, univers. Pour que chaque production s'inscrive dans quelque chose de plus grand que le projet lui-même.</div>
+      <ul class="sc-list">
+        <li>Stratégie visuelle</li><li>Cohérence de marque</li>
+        <li>Conseil créatif</li><li>Accompagnement long terme</li>
+      </ul>
     </div>
   </div>
-  <div class="manifeste-declaration reveal">
-    "Avant de filmer, je prends du recul. Je m'intéresse à l'ensemble, pas seulement au plan. Je rythme ma vision avec l'émotion et le message. Pour que le temps que tu passes avec moi se transforme en sensation."
+  <div class="mobile-scroll-hint">
+    <span class="scroll-dot active"></span>
+    <span class="scroll-dot"></span>
+    <span class="scroll-dot"></span>
+    <span class="scroll-label">Glisse pour voir plus →</span>
   </div>
 </section>
+
+  <div class="section-cta reveal">
+    <div class="section-cta-reassurance"><span>Premier échange offert</span><span>Réponse sous 48h</span><span>Solo · de A à Z</span></div>
+    <a href="#contact" class="section-cta-btn"><em>Démarrer un projet →</em></a>
+  </div>
 
 
 <!-- 4. À PROPOS -->
@@ -2195,89 +2136,6 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
   </div>
 </section>
 
-<hr class="thin">
-
-<!-- 5. PROCESSUS -->
-<section id="process">
-  <div class="eyebrow reveal">Comment je travaille</div>
-  <h2 class="s-title reveal">Le processus,<br><em>de A à Z.</em></h2>
-  <div class="process-steps reveal">
-    <div class="process-step tilt-card">
-      <div class="ps-n">01</div><div class="ps-title">Comprendre</div>
-      <div class="ps-desc">Je prends du recul sur ton projet, ton univers, ce que tu veux transmettre. Avant une seule image, le sens.</div>
-    </div>
-    <div class="process-step tilt-card">
-      <div class="ps-n">02</div><div class="ps-title">Concevoir</div>
-      <div class="ps-desc">Je construis la vision globale. Rythme, émotion, message. Pour que l'œuvre soit homogène et cohérente de bout en bout.</div>
-    </div>
-    <div class="process-step tilt-card">
-      <div class="ps-n">03</div><div class="ps-title">Capturer</div>
-      <div class="ps-desc">Je filme avec intention. Chaque plan a une signification. Ce qui est superficiel disparaît. Ce qui fait l'élégance reste.</div>
-    </div>
-    <div class="process-step tilt-card">
-      <div class="ps-n">04</div><div class="ps-title">Livrer</div>
-      <div class="ps-desc">Je monte, j'affine, je rends. Une œuvre cohérente qui durera bien au-delà de la tendance du moment.</div>
-    </div>
-  </div>
-</section>
-
-
-<!-- 6. VALEURS -->
-<section id="valeurs">
-  <div class="eyebrow reveal">Ce qui guide tout</div>
-  <h2 class="s-title reveal">Valeurs &amp; vision.</h2>
-  <div class="valeurs-layout">
-    <div>
-      <div class="valeur-item reveal">
-        <div class="vi-icon">◆</div>
-        <div><div class="vi-title">Le Rythme</div><div class="vi-desc">Je prends du recul, je m'intéresse à l'ensemble. Je rythme ma vision avec l'émotion et le message pour que l'œuvre soit cohérente de bout en bout.</div></div>
-      </div>
-      <div class="valeur-item reveal">
-        <div class="vi-icon">◇</div>
-        <div><div class="vi-title">La Beauté</div><div class="vi-desc">Pas la beauté artificielle. Le meilleur d'un moment, révélé plutôt que construit.</div></div>
-      </div>
-      <div class="valeur-item reveal">
-        <div class="vi-icon">○</div>
-        <div><div class="vi-title">La Cohérence</div><div class="vi-desc">Seul de A à Z, parce qu'une vision qui passe par trop de mains perd quelque chose d'essentiel.</div></div>
-      </div>
-      <div class="valeur-item reveal">
-        <div class="vi-icon">◆</div>
-        <div><div class="vi-title">La Durée</div><div class="vi-desc">Je construis avec une vision long terme. Je planifie loin dans le temps, pas pour ce trimestre.</div></div>
-      </div>
-    </div>
-    <div class="valeurs-right">
-      <div class="vq-block reveal">
-        <div class="vq-text">"Le meilleur d'un moment existe déjà. Mon travail, c'est de le rendre impossible à oublier."</div>
-        <div class="vq-attr">Nolan Arc · Réalisateur</div>
-      </div>
-      <div class="son-block reveal">
-        <div class="son-label">L'univers sonore</div>
-        <div class="son-text">Mes références musicales changent au quotidien : elles accompagnent mes projets, mes émotions, mes moments de vie. Ce qui compte, c'est pas le style, c'est que la musique corresponde à l'intention et au message de chaque réalisation.<br><br>Le son précède l'image. Il décide de ce que tu vas ressentir avant même que le premier plan apparaisse.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- 7. NOM -->
-<section id="nom">
-  <div class="eyebrow reveal" style="justify-content:center;">Le nom</div>
-  <div class="nom-display reveal">Nolan<em>.Arc</em></div>
-  <div class="nom-senses reveal">
-    <div class="nom-sense"><div class="ns-n">01</div><div class="ns-title">Arc narratif</div><div class="ns-desc">La structure de toute histoire. Chaque réalisateur en construit un, mais peu le savent vraiment.</div></div>
-    <div class="nom-sense"><div class="ns-n">02</div><div class="ns-title">Arc de lumière</div><div class="ns-desc">La courbe que trace la lumière. Pas un effet mais une décision. La matière première de chaque plan.</div></div>
-    <div class="nom-sense"><div class="ns-n">03</div><div class="ns-title">Arc de trajectoire</div><div class="ns-desc">Une carrière n'est pas une ligne droite. C'est une courbe. Et quand tu sais où elle mène, tout change.</div></div>
-    <div class="nom-sense"><div class="ns-n">04</div><div class="ns-title">Arc architectural</div><div class="ns-desc">La forme qui tient tout ensemble. Une œuvre a toujours un arc : c'est lui qui décide si elle reste.</div></div>
-  </div>
-  <div class="nom-handles reveal">
-    <div class="nom-handle">Instagram <em>@nolan.arc_</em></div>
-    <div class="nom-handle">YouTube <em>@nolanarc</em></div>
-    <div class="nom-handle">Watermark <em>Nolan.Arc</em></div>
-  </div>
-</section>
-
-
-<!-- 8. CONTACT, DUAL CTA -->
 <section id="contact">
   <div class="contact-hero reveal">
     <div class="contact-title">Tu as un projet.<br><em>Parlons-en.</em></div>
@@ -2438,11 +2296,10 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
         <span class="faq-q-text">Est-ce qu'on peut voir des exemples de ton travail ?</span>
         <span class="faq-q-icon">+</span>
       </button>
-      <div class="faq-a"><div class="faq-a-inner">Le portfolio est en haut de page. Tu retrouves aussi mes réalisations sur <a href="https://instagram.com/nolan.arc_" target="_blank" style="color:var(--orange);">@nolan.arc_</a> et <a href="https://youtube.com/@nolanarc" target="_blank" style="color:var(--orange);">YouTube @nolanarc</a> tu trouveras l'ensemble de mes réalisations. N'hésite pas à regarder avant de me contacter.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">Remonte jusqu'à la <a href="/#work" style="color:var(--orange);">section Work</a>. Tu retrouves aussi mes réalisations sur <a href="https://instagram.com/nolan.arc_" target="_blank" style="color:var(--orange);">@nolan.arc_</a> et sur <a href="https://youtube.com/@nolanarc" target="_blank" style="color:var(--orange);">YouTube @nolanarc</a>. N'hésite pas à y jeter un œil avant de me contacter.</div></div>
     </div>
   </div>
 </section>
-
 
 <!-- VERDICT -->
 <section id="verdict">
@@ -2460,8 +2317,6 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
   </div>
 </section>
 
-
-
 <!-- FOOTER -->
 <footer>
   <a href="#hero" class="nav-logo" style="font-family:var(--title);font-size:1.05rem;color:var(--white);text-decoration:none;">Nolan<em style="font-style:italic;color:var(--cc460c, #cc460c);">.Arc</em></a>
@@ -2470,6 +2325,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
     <li><a href="#services">Services</a></li>
     <li><a href="#about">À propos</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="/ma-demarche.html">Ma démarche</a></li>
     <li><a href="mentions-legales.html">Mentions légales</a></li>
   </ul>
   <div class="foot-social">
