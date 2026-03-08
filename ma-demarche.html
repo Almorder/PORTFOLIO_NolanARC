@@ -45,87 +45,64 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Person",
-      "@id": "https://nolanarc.com/#nolan",
-      "name": "Nolan Arc",
-      "alternateName": "Nolan Arc",
-      "jobTitle": "Réalisateur",
-      "description": "Réalisateur freelance spécialisé en films de marque, vidéaste mariage et direction artistique. Basé en France, disponible partout.",
-      "url": "https://nolanarc.com",
-      "image": "https://nolanarc.com/og-cover.jpg",
-      "sameAs": [
-        "https://instagram.com/nolan.arc_",
-        "https://youtube.com/@nolanarc",
-        "https://www.youtube.com/channel/@nolanarc"
-      ],
-      "knowsAbout": [
-        "Films de marque",
-        "Vidéaste mariage",
-        "Direction artistique",
-        "Réalisation vidéo",
-        "Film institutionnel",
-        "Demande en mariage filmée",
-        "Contenu réseaux sociaux"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "FR"
+      "@type": "Article",
+      "@id": "https://nolanarc.com/ma-demarche.html#article",
+      "headline": "Ma démarche — Nolan Arc, Réalisateur",
+      "description": "La vision, les principes créatifs et le processus de travail de Nolan Arc, réalisateur spécialisé en films de marque et vidéaste mariage.",
+      "author": {
+        "@type": "Person",
+        "@id": "https://nolanarc.com/#nolan-arc",
+        "name": "Nolan Arc",
+        "url": "https://nolanarc.com"
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "nolanribcontact@gmail.com",
-        "contactType": "customer service",
-        "availableLanguage": "French"
-      }
+      "publisher": {
+        "@type": "Person",
+        "name": "Nolan Arc",
+        "url": "https://nolanarc.com"
+      },
+      "url": "https://nolanarc.com/ma-demarche.html",
+      "mainEntityOfPage": "https://nolanarc.com/ma-demarche.html",
+      "inLanguage": "fr",
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Réalisation vidéo"
+        },
+        {
+          "@type": "Thing",
+          "name": "Films de marque"
+        },
+        {
+          "@type": "Thing",
+          "name": "Direction artistique"
+        },
+        {
+          "@type": "Thing",
+          "name": "Processus créatif"
+        },
+        {
+          "@type": "Thing",
+          "name": "Vidéaste mariage"
+        }
+      ],
+      "keywords": "réalisateur, films de marque, démarche créative, direction artistique, vidéaste mariage, processus de réalisation"
     },
     {
-      "@type": "ProfessionalService",
-      "@id": "https://nolanarc.com/#service",
-      "name": "Nolan Arc, Réalisation vidéo",
-      "provider": {"@id": "https://nolanarc.com/#nolan"},
-      "description": "Films de marque, vidéaste mariage et direction artistique en France.",
-      "areaServed": "France",
-      "serviceType": ["Film de marque", "Vidéaste mariage", "Direction artistique"],
-      "url": "https://nolanarc.com"
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://nolanarc.com/#business",
-      "name": "Nolan Arc",
-      "description": "Réalisateur freelance — films de marque, mariages, direction artistique. Basé en France, disponible partout.",
-      "url": "https://nolanarc.com",
-      "email": "nolanribcontact@gmail.com",
-      "priceRange": "€€",
-      "currenciesAccepted": "EUR",
-      "paymentAccepted": "Virement bancaire",
-      "areaServed": "France",
-      "serviceType": ["Film de marque", "Vidéaste mariage", "Direction artistique"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Services audiovisuels",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Film de marque"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Film de mariage"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Direction artistique"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Demande en mariage filmée"}}
-        ]
-      },
-      "sameAs": [
-        "https://instagram.com/nolan.arc_",
-        "https://youtube.com/@nolanarc"
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Nolan Arc",
+          "item": "https://nolanarc.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ma démarche",
+          "item": "https://nolanarc.com/ma-demarche.html"
+        }
       ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://nolanarc.com/#website",
-      "url": "https://nolanarc.com",
-      "name": "Nolan Arc",
-      "description": "Portfolio de Nolan Arc, réalisateur films de marque et événementiel.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://nolanarc.com/?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
     }
   ]
 }

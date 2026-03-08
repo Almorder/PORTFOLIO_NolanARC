@@ -40,8 +40,7 @@
 <meta name="twitter:image" content="https://nolanarc.com/og-cover.jpg">
 
 <!-- Schema.org JSON-LD -->
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -82,10 +81,16 @@
       "@type": "ProfessionalService",
       "@id": "https://nolanarc.com/#service",
       "name": "Nolan Arc, Réalisation vidéo",
-      "provider": {"@id": "https://nolanarc.com/#nolan"},
+      "provider": {
+        "@id": "https://nolanarc.com/#nolan"
+      },
       "description": "Films de marque, vidéaste mariage et direction artistique en France.",
       "areaServed": "France",
-      "serviceType": ["Film de marque", "Vidéaste mariage", "Direction artistique"],
+      "serviceType": [
+        "Film de marque",
+        "Vidéaste mariage",
+        "Direction artistique"
+      ],
       "url": "https://nolanarc.com"
     },
     {
@@ -95,19 +100,48 @@
       "description": "Réalisateur freelance — films de marque, mariages, direction artistique. Basé en France, disponible partout.",
       "url": "https://nolanarc.com",
       "email": "nolanribcontact@gmail.com",
-      "priceRange": "€€",
+      "priceRange": "À partir de 1500€",
       "currenciesAccepted": "EUR",
       "paymentAccepted": "Virement bancaire",
       "areaServed": "France",
-      "serviceType": ["Film de marque", "Vidéaste mariage", "Direction artistique"],
+      "serviceType": [
+        "Film de marque",
+        "Vidéaste mariage",
+        "Direction artistique"
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Services audiovisuels",
+        "name": "Services de réalisation vidéo",
         "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Film de marque"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Film de mariage"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Direction artistique"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Demande en mariage filmée"}}
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Film de marque"
+            },
+            "description": "Film institutionnel, présentation produit, contenu réseaux"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Film de mariage"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "1500",
+              "priceCurrency": "EUR",
+              "description": "Film 30 min, captation demi-journée, montage et rendu"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Direction artistique"
+            },
+            "description": "Stratégie visuelle, cohérence de marque, conseil créatif"
+          }
         ]
       },
       "sameAs": [
@@ -126,10 +160,314 @@
         "target": "https://nolanarc.com/?s={search_term_string}",
         "query-input": "required name=search_term_string"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://nolanarc.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment se passe une collaboration concrètement ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On commence par un échange pour que je comprenne ton projet, ton univers et ce que tu veux transmettre. Je construis ensuite une vision, pas juste un devis. Tournage, montage, rendu : je gère tout seul, de A à Z. Le résultat, tu le reçois prêt à publier."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tu travailles partout en France ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Je suis basé en France et je me déplace sur tout le territoire. Pour les projets à l'étranger, c'est envisageable, dis-moi où tu en es et on voit ensemble."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels sont tes délais de livraison ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pour un film de marque, compte en général 2 à 4 semaines après le tournage. Pour un film de mariage, je livre en 4 à 8 semaines. Je prends le temps qu'il faut, pas question de bâcler le montage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Est-ce que tu travailles avec des équipes ou seul ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Seul, de la conception au rendu. C'est une décision volontaire, pas une contrainte. Quand une vision passe par trop de mains, elle perd quelque chose. Tu travailles avec moi du début à la fin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tu as des tarifs indicatifs ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chaque projet est différent, je ne travaille pas sur catalogue. Dis-moi ce que tu as en tête et je te fais une proposition adaptée. Ce qui compte, c'est qu'on soit alignés sur la vision avant de parler budget.→ Me parler de ton projet"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "C'est quoi le budget pour un film de mariage ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "À partir de 1 500 € pour un film de 30 minutes. Ce tarif comprend la captation le jour J jusqu'à une demi-journée sur place, le montage et le rendu final. Chaque projet est unique, le tarif peut évoluer selon la durée ou le format souhaité. Dis-moi ce que tu as en tête et je te fais une proposition sur mesure.→ Me parler de ton projet"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Est-ce qu'on peut voir des exemples de ton travail ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Remonte jusqu'à la section Work. Tu retrouves aussi mes réalisations sur @nolan.arc_ et sur YouTube @nolanarc. Tout est là."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://nolanarc.com/#reviews",
+      "name": "Nolan Arc",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "6",
+        "reviewCount": "6"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Matthieu"
+          },
+          "reviewBody": "Franchement Nolan a un vrai mindset de créateur. Il ne se contente pas de filmer, il réfléchit à ce qu'il veut raconter et pourquoi. Il est structuré, il bosse sérieusement et ça se voit dans sa progression.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "description": "Ouilove · Direction artistique"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Nawel & Yanis"
+          },
+          "reviewBody": "J'ai enfin regardé le film avec Yanis, franchement merci beaucoup il était incroyable, pile comme je l'imaginais. T'as géré merci beaucoup pour ton travail !",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "description": "Film de mariage"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Anthony Cosmopol"
+          },
+          "reviewBody": "Salut champion, merci pour hier t'as géré de fou, c'était intense mais franchement cool ! Et merci pour les rush !",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "description": "ISC Paris · Teaser d'association"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Lola"
+          },
+          "reviewBody": "Elle est vraiment super stylée !! Tes plans nous mettent grave en valeur, ça fait plaisir. Bravoooo et merci encore !",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "description": "Modèle · Création de contenu bijoux"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "A One Permis"
+          },
+          "reviewBody": "Coucou, incroyable la vidéo merci !! Les patrons ont kiffé !",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "description": "Contenu réseaux sociaux"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Reka Force Security"
+          },
+          "reviewBody": "C'est vraiment fort ce que tu as fait Nolan 💪",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "description": "Direction artistique"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://nolanarc.com/#video-film-de-marque",
+      "name": "Film de marque",
+      "description": "Film de marque réalisé par Nolan Arc",
+      "creator": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "producer": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "genre": "Film de marque",
+      "inLanguage": "fr",
+      "contentUrl": "https://nolanarc.com/#work",
+      "thumbnailUrl": "https://nolanarc.com/og-cover.jpg",
+      "uploadDate": "2024-01-01"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://nolanarc.com/#video-film-de-mariage",
+      "name": "Film de mariage",
+      "description": "Film de mariage réalisé par Nolan Arc",
+      "creator": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "producer": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "genre": "Film de mariage",
+      "inLanguage": "fr",
+      "contentUrl": "https://nolanarc.com/#work",
+      "thumbnailUrl": "https://nolanarc.com/og-cover.jpg",
+      "uploadDate": "2024-01-01"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://nolanarc.com/#video-direction-artistique",
+      "name": "Direction artistique",
+      "description": "Projet de direction artistique par Nolan Arc",
+      "creator": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "producer": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "genre": "Direction artistique",
+      "inLanguage": "fr",
+      "contentUrl": "https://nolanarc.com/#work",
+      "thumbnailUrl": "https://nolanarc.com/og-cover.jpg",
+      "uploadDate": "2024-01-01"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://nolanarc.com/#video-film-institutionnel",
+      "name": "Film institutionnel",
+      "description": "Film institutionnel réalisé par Nolan Arc",
+      "creator": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "producer": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "genre": "Film institutionnel",
+      "inLanguage": "fr",
+      "contentUrl": "https://nolanarc.com/#work",
+      "thumbnailUrl": "https://nolanarc.com/og-cover.jpg",
+      "uploadDate": "2024-01-01"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://nolanarc.com/#video-demande-en-mariage-filmée",
+      "name": "Demande en mariage filmée",
+      "description": "Demande en mariage filmée par Nolan Arc",
+      "creator": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "producer": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "genre": "Événementiel",
+      "inLanguage": "fr",
+      "contentUrl": "https://nolanarc.com/#work",
+      "thumbnailUrl": "https://nolanarc.com/og-cover.jpg",
+      "uploadDate": "2024-01-01"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://nolanarc.com/#video-contenu-social",
+      "name": "Contenu social",
+      "description": "Contenu réseaux sociaux réalisé par Nolan Arc",
+      "creator": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "producer": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "genre": "Contenu réseaux sociaux",
+      "inLanguage": "fr",
+      "contentUrl": "https://nolanarc.com/#work",
+      "thumbnailUrl": "https://nolanarc.com/og-cover.jpg",
+      "uploadDate": "2024-01-01"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://nolanarc.com/#video-stratégie-visuelle",
+      "name": "Stratégie visuelle",
+      "description": "Stratégie visuelle et direction artistique par Nolan Arc",
+      "creator": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "producer": {
+        "@id": "https://nolanarc.com/#nolan-arc"
+      },
+      "genre": "Direction artistique",
+      "inLanguage": "fr",
+      "contentUrl": "https://nolanarc.com/#work",
+      "thumbnailUrl": "https://nolanarc.com/og-cover.jpg",
+      "uploadDate": "2024-01-01"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://nolanarc.com/#webpage",
+      "url": "https://nolanarc.com",
+      "name": "Nolan Arc — Réalisateur, Films de marque & Événementiel",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".hero-claim",
+          ".hero-kicker",
+          ".hero-stats",
+          ".sc-desc",
+          ".verd-text",
+          ".verd-last",
+          ".about-quote",
+          ".contact-title",
+          ".faq-a-inner"
+        ]
+      },
+      "description": "Nolan Arc est réalisateur freelance en France. Spécialisé en films de marque, films de mariage et direction artistique. Seul, de la conception au rendu.",
+      "about": {
+        "@type": "Person",
+        "@id": "https://nolanarc.com/#nolan-arc"
+      }
     }
   ]
-}
-</script>
+}</script>
 
 <!-- FAVICON inline SVG -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><ellipse cx='52' cy='52' rx='38' ry='26' fill='none' stroke='%23cc460c' stroke-width='3' transform='rotate(-20 52 52)'/><circle cx='72' cy='36' r='4' fill='%23f0ebe2'/></svg>">
@@ -1420,6 +1758,17 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
 
 .testi-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
 .testi-avatar{overflow:hidden;flex-shrink:0;}
+
+/* ─── CTA MA DÉMARCHE ─── */
+.demarche-cta{padding:4rem 6vw;border-top:1px solid var(--faint);}
+.demarche-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap;}
+.demarche-cta-btn{display:inline-flex;align-items:center;gap:1rem;padding:1.1rem 2.5rem;border:1px solid var(--orange);font-family:var(--head);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);text-decoration:none;position:relative;overflow:hidden;transition:color .4s;white-space:nowrap;flex-shrink:0;}
+.demarche-cta-btn::before{content:'';position:absolute;inset:0;background:var(--orange);transform:translateX(-100%);transition:transform .45s cubic-bezier(.16,1,.3,1);}
+.demarche-cta-btn:hover{color:var(--bg);}
+.demarche-cta-btn:hover::before{transform:translateX(0);}
+.demarche-cta-btn span{position:relative;z-index:1;font-family:var(--body);}
+@media(max-width:768px){.demarche-cta-inner{flex-direction:column;align-items:flex-start;}.demarche-cta-btn{width:100%;justify-content:center;}}
+
 </style>
 </head>
 <body>
@@ -1547,7 +1896,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
   -->
   <div class="hero-dispo">
     <div class="dispo-dot"></div>
-    <span class="dispo-text">Disponible, nouveaux projets ouverts</span>
+    <span class="dispo-text">✦ Disponible · Réservation ouverte</span>
   </div>
   <div class="hero-kicker">Réalisateur · Films de marque · Événementiel</div>
   <h1 class="hero-title">Nolan<span class="dot">.</span><span class="arc">Arc</span></h1>
@@ -1906,10 +2255,21 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
   <p class="s-body reveal">Les avis ne se commandent pas. Ils se méritent.</p>
   <div class="testi-slider reveal">
     <div class="testi-track" id="testiTrack">
-
-      <div class="testi-card">
+<div class="testi-card">
         <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Salam, j'ai enfin regardé le film avec Yanis, franchement merci beaucoup il était incroyable, pile comme je l'imaginais. T'as géré merci beaucoup pour ton travail !"</div>
+        <div class="testi-text">"Franchement Nolan a un vrai mindset de créateur. Il ne se contente pas de filmer, il réfléchit à ce qu'il veut raconter et pourquoi. Il est structuré, il bosse sérieusement et ça se voit dans sa progression."</div>
+        <div class="testi-author">
+          <div class="testi-avatar"><img src="data:image/jpeg;base64,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" alt="Matthieu" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+          <div>
+            <div class="testi-name"><strong>Matthieu</strong></div>
+            <div class="testi-role">Ouilove · Direction artistique</div>
+          </div>
+          <div class="testi-source">📱 Instagram</div>
+        </div>
+      </div>
+<div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"J'ai enfin regardé le film avec Yanis, franchement merci beaucoup il était incroyable, pile comme je l'imaginais. T'as géré merci beaucoup pour ton travail !"</div>
         <div class="testi-author">
           <div class="testi-avatar"><img src="data:image/jpeg;base64,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" alt="Nawel &amp; Yanis" loading="lazy"></div>
           <div>
@@ -1919,8 +2279,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
           <div class="testi-source">⭐ Google</div>
         </div>
       </div>
-
-      <div class="testi-card">
+<div class="testi-card">
         <div class="testi-stars">★★★★★</div>
         <div class="testi-text">"Salut champion, merci pour hier t'as géré de fou, c'était intense mais franchement cool ! Et merci pour les rush !"</div>
         <div class="testi-author">
@@ -1932,8 +2291,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
           <div class="testi-source">📱 Instagram</div>
         </div>
       </div>
-
-      <div class="testi-card">
+<div class="testi-card">
         <div class="testi-stars">★★★★★</div>
         <div class="testi-text">"Elle est vraiment super stylée !! Tes plans nous mettent grave en valeur, ça fait plaisir. Bravoooo et merci encore !"</div>
         <div class="testi-author">
@@ -1945,8 +2303,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
           <div class="testi-source">📱 Instagram</div>
         </div>
       </div>
-
-      <div class="testi-card">
+<div class="testi-card">
         <div class="testi-stars">★★★★★</div>
         <div class="testi-text">"Hello Nolan, ta vidéo est incroyable, j'adore !! T'as géré, bravoo !!!"</div>
         <div class="testi-author">
@@ -1958,8 +2315,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
           <div class="testi-source">📱 Instagram</div>
         </div>
       </div>
-
-      <div class="testi-card">
+<div class="testi-card">
         <div class="testi-stars">★★★★★</div>
         <div class="testi-text">"Coucou, incroyable la vidéo merci !! Les patrons ont kiffé !"</div>
         <div class="testi-author">
@@ -1971,8 +2327,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
           <div class="testi-source">📱 Instagram</div>
         </div>
       </div>
-
-      <div class="testi-card">
+<div class="testi-card">
         <div class="testi-stars">★★★★★</div>
         <div class="testi-text">"C'est vraiment fort ce que tu as fait Nolan 💪🐯"</div>
         <div class="testi-author">
@@ -1985,21 +2340,9 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
         </div>
       </div>
 
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Franchement Nolan a un vrai mindset de créateur. Il ne se contente pas de filmer, il réfléchit à ce qu'il veut raconter et pourquoi. Il est structuré, il bosse sérieusement et ça se voit dans sa progression."</div>
-        <div class="testi-author">
-          <div class="testi-avatar"><img src="data:image/jpeg;base64,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" alt="Matthieu" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
-          <div>
-            <div class="testi-name"><strong>Matthieu</strong></div>
-            <div class="testi-role">Ouilove · Direction artistique</div>
-          </div>
-          <div class="testi-source">📱 Instagram</div>
-        </div>
-      </div>
 
-    </div>
   </div>
+  
   <div class="testi-nav">
     <button class="testi-btn" id="testiPrev">←</button>
     <div class="testi-progress"><div class="testi-bar" id="testiBar"></div></div>
@@ -2008,7 +2351,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
 </section>
 
   <div class="section-cta reveal">
-    <div class="section-cta-reassurance"><span>Premier échange offert</span><span>Réponse sous 48h</span><span>Solo · de A à Z</span></div>
+    <div class="section-cta-reassurance"><span>Premier échange offert</span><span>Réponse sous 48h</span><span>Un seul interlocuteur</span></div>
     <a href="#contact" class="section-cta-btn"><em>Démarrer un projet →</em></a>
   </div>
 
@@ -2056,8 +2399,8 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
 </section>
 
   <div class="section-cta reveal">
-    <div class="section-cta-reassurance"><span>Premier échange offert</span><span>Réponse sous 48h</span><span>Solo · de A à Z</span></div>
-    <a href="#contact" class="section-cta-btn"><em>Démarrer un projet →</em></a>
+    <div class="section-cta-reassurance"><span>Sans engagement</span><span>De la conception au rendu</span><span>Rien de superflu</span></div>
+    <a href="#contact" class="section-cta-btn"><em>Parlons de ton projet →</em></a>
   </div>
 
 
@@ -2115,11 +2458,21 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
         <div class="about-detail"><div class="ad-label">Méthode</div><div class="ad-val"><strong>Seul, de la conception au rendu</strong></div></div>
         <div class="about-detail"><div class="ad-label">Univers</div><div class="ad-val"><strong>Marques · Événements · Vie</strong></div></div>
         <div class="about-detail"><div class="ad-label">Priorité</div><div class="ad-val"><strong>Le message avant tout</strong></div></div>
-        <div class="about-detail"><div class="ad-label">Stratégie</div><div class="ad-val"><strong>Toujours un coup d'avance</strong></div></div>
+        <div class="about-detail"><div class="ad-label">Stratégie</div><div class="ad-val"><strong>Penser avant de filmer</strong></div></div>
       </div>
     </div>
   </div>
 </section>
+<div class="demarche-cta reveal">
+  <div class="demarche-cta-inner">
+    <div class="demarche-cta-text">
+      <div class="eyebrow" style="margin-bottom:.8rem;">Aller plus loin</div>
+      <div style="font-family:var(--title);font-size:clamp(1.2rem,2vw,1.6rem);font-style:italic;font-weight:300;color:var(--white);line-height:1.4;">La vision, les principes,<br>la démarche derrière le travail.</div>
+    </div>
+    <a href="/ma-demarche.html" class="demarche-cta-btn">Découvrir ma démarche <span>→</span></a>
+  </div>
+</div>
+
 
 <section id="contact">
   <div class="contact-hero reveal">
@@ -2132,7 +2485,8 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
         <span>Prendre 15 min avec moi</span>
         <span class="rdv-arrow">→</span>
       </a>
-      <div class="rdv-sub">Appel découverte · Sans engagement · Premier échange offert</div>
+      <div class="rdv-sub">15/30 min · Sans engagement · On part de là</div>
+      <div style="font-family:var(--head);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-top:1.5rem;">✦ Mariages 2026/2027 — places limitées</div>
     </div>
   </div>
 
@@ -2278,10 +2632,17 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
     </div>
     <div class="faq-item">
       <button class="faq-q">
+        <span class="faq-q-text">C'est quoi le budget pour un film de mariage ?</span>
+        <span class="faq-q-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">À partir de <strong style="color:var(--orange);">1 500 €</strong> pour un film de 30 minutes. Ce tarif comprend la captation le jour J jusqu'à une demi-journée sur place, le montage et le rendu final. Chaque projet est unique, le tarif peut évoluer selon la durée ou le format souhaité. Dis-moi ce que tu as en tête et je te fais une proposition sur mesure.<br><br><a href="#contact" style="color:var(--orange);font-family:var(--head);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;">→ Me parler de ton projet</a></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
         <span class="faq-q-text">Est-ce qu'on peut voir des exemples de ton travail ?</span>
         <span class="faq-q-icon">+</span>
       </button>
-      <div class="faq-a"><div class="faq-a-inner">Remonte jusqu'à la <a href="/#work" style="color:var(--orange);">section Work</a>. Tu retrouves aussi mes réalisations sur <a href="https://instagram.com/nolan.arc_" target="_blank" style="color:var(--orange);">@nolan.arc_</a> et sur <a href="https://youtube.com/@nolanarc" target="_blank" style="color:var(--orange);">YouTube @nolanarc</a>. N'hésite pas à y jeter un œil avant de me contacter.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">Remonte jusqu'à la <a href="/#work" style="color:var(--orange);">section Work</a>. Tu retrouves aussi mes réalisations sur <a href="https://instagram.com/nolan.arc_" target="_blank" style="color:var(--orange);">@nolan.arc_</a> et sur <a href="https://youtube.com/@nolanarc" target="_blank" style="color:var(--orange);">YouTube @nolanarc</a>. Tout est là.</div></div>
     </div>
   </div>
 </section>
@@ -3023,11 +3384,36 @@ document.querySelectorAll('.mood-btn').forEach(btn => {
     btn.classList.toggle('show', window.scrollY > 500);
   }, {passive:true});
   btn.addEventListener('click', function(){
-    var nav = document.querySelector('nav');
-    var target = nav ? nav.offsetTop : 0;
-    window.scrollTo({top: target, behavior:'smooth'});
+    var target = document.querySelector('.hero-kicker') || document.getElementById('hero');
+    if(!target) return;
+    var targetY = target.getBoundingClientRect().top + window.pageYOffset;
+    var startY = window.pageYOffset;
+    var dist = targetY - startY;
+    var duration = 350;
+    var startTime = null;
+    function ease(t){ return t<.5 ? 2*t*t : -1+(4-2*t)*t; }
+    function step(ts){
+      if(!startTime) startTime = ts;
+      var elapsed = ts - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, startY + dist * ease(progress));
+      if(progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
   });
 })();
 </script>
 </body>
-</html>
+</html
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      >

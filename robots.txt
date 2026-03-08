@@ -1,9 +1,48 @@
+# robots.txt — nolanarc.com
+
 User-agent: *
 Allow: /
-Disallow: /mentions-legales.html
+Disallow: /private/
 
-# Sitemap
+# ── Crawlers IA — explicitement autorisés ──────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# ── Sitemap ─────────────────────────────────────────────────────────
 Sitemap: https://nolanarc.com/sitemap.xml
 
-# YouTube channel — help Google associate
-# https://www.youtube.com/@nolanarc
+# ── llms.txt ────────────────────────────────────────────────────────
+# Pour les LLMs : https://nolanarc.com/llms.txt
