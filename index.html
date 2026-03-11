@@ -1913,6 +1913,7 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
   pointer-events:none;
 }
 #backTop.show{opacity:1;transform:none;pointer-events:auto;}
+body.menu-open #side-nav{opacity:0;pointer-events:none;}
 #backTop:hover{background:var(--odim);}
 @media(max-width:768px){#backTop{bottom:1.2rem;right:1.2rem;width:40px;height:40px;}}
 
@@ -3149,9 +3150,10 @@ document.querySelectorAll('.wf-btn').forEach(btn=>{
 /* MOBILE MENU */
 const menuBtn=document.getElementById('menuBtn');
 const mobileNav=document.getElementById('mobileNav');
-function closeMobile(){mobileNav.classList.remove('open');menuBtn.querySelectorAll('span')[0].style.transform='';menuBtn.querySelectorAll('span')[1].style.opacity='1';menuBtn.querySelectorAll('span')[2].style.transform='';}
+function closeMobile(){mobileNav.classList.remove('open');document.body.classList.remove('menu-open');menuBtn.querySelectorAll('span')[0].style.transform='';menuBtn.querySelectorAll('span')[1].style.opacity='1';menuBtn.querySelectorAll('span')[2].style.transform='';}
 menuBtn.addEventListener('click',()=>{
   const open=mobileNav.classList.toggle('open');
+  document.body.classList.toggle('menu-open', open);
   const spans=menuBtn.querySelectorAll('span');
   if(open){spans[0].style.transform='translateY(6px) rotate(45deg)';spans[1].style.opacity='0';spans[2].style.transform='translateY(-6px) rotate(-45deg)';}
   else{spans[0].style.transform='';spans[1].style.opacity='1';spans[2].style.transform='';}
