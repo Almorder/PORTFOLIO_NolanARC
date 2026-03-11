@@ -508,7 +508,7 @@
 *,*::before,*::after{box-sizing:border-box;}
 img,video,iframe,svg{max-width:100%;}
 .marquee-track,.work-filters,.work-mood-filters{max-width:100vw;}
-html{scroll-behavior:smooth;overflow-x:hidden;}body{overflow-x:hidden;}
+html{scroll-behavior:smooth;scroll-padding-top:80px;overflow-x:hidden;}body{overflow-x:hidden;}
 a{color:inherit;text-decoration:none;}
 a:hover{color:var(--orange);}
 body{background:var(--bg);color:var(--white);font-family:var(--body);font-weight:300;line-height:1.65;overflow-x:hidden;cursor:none;}
@@ -1438,6 +1438,9 @@ nav.scrolled{background:rgba(8,7,6,.85);backdrop-filter:blur(12px);border-bottom
    RESPONSIVE MOBILE
 ───────────────────── */
 @media(max-width:768px){
+  /* Nav latérale : cliquable mais z-index bas pour ne pas bloquer les sliders */
+  #side-nav{right:.3rem;left:auto;z-index:50;}
+  #side-nav .sn-label{display:none;}
   /* Testimonials mobile */
   .testi-card{flex:0 0 85vw;}
   /* Modal mobile */
@@ -2088,7 +2091,7 @@ body.menu-open #side-nav{opacity:0;pointer-events:none;}
   </div>
   <div class="hero-kicker">Réalisateur · Films de marque · Événementiel</div>
   <h1 class="hero-title">Nolan<span class="dot">.</span><span class="arc">Arc</span></h1>
-  <div id="scroll-top-anchor" style="position:absolute;"></div>
+  <div id="scroll-top-anchor"></div>
   <div class="hero-bottom">
     <div class="hero-left">
       <div class="hero-typewriter"><span id="tw" style="color:#cc460c;font-style:italic;font-family:'Yrsa',serif;font-size:clamp(1.1rem,1.8vw,1.5rem);"></span><span id="tw-cursor" class="typewriter-cursor"></span></div>
@@ -2442,7 +2445,6 @@ body.menu-open #side-nav{opacity:0;pointer-events:none;}
 <div class="section-dot-sep"><span>·</span></div>
   <div class="eyebrow reveal">Ce qu'ils disent</div>
   <h2 class="s-title reveal">Les avis ne se commandent pas.<br><em>Ils se méritent.</em></h2>
-  <p class="s-body reveal">Les avis ne se commandent pas. Ils se méritent.</p>
   <div class="testi-slider reveal">
     <div class="testi-track" id="testiTrack">
 <div class="testi-card">
@@ -2569,6 +2571,10 @@ body.menu-open #side-nav{opacity:0;pointer-events:none;}
         <li>Film de mariage</li><li>Demande en mariage</li>
         <li>Moments de vie</li><li>Souvenirs durables</li>
       </ul>
+      <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--faint);">
+        <span style="font-family:var(--title);font-size:1.4rem;font-style:italic;color:var(--orange);">À partir de 1 500 €</span>
+        <a href="#faq" style="display:block;margin-top:.5rem;font-family:var(--head);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .3s;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--muted)'">Voir les détails → FAQ</a>
+      </div>
     </div>
     <div class="service-card tilt-card reveal">
       <div class="sc-icon">○</div>
@@ -2833,7 +2839,7 @@ body.menu-open #side-nav{opacity:0;pointer-events:none;}
   <div class="eyebrow reveal" style="margin-top:6rem;">Questions fréquentes</div>
   <h2 class="s-title reveal">Ce que tu te <em>demandes sûrement.</em></h2>
 
-  <div class="faq-list reveal" id="faqAccordion">
+  <div class="faq-list reveal" id="faq">
     <div class="faq-item">
       <button class="faq-q">
         <span class="faq-q-text">Comment se passe une collaboration concrètement ?</span>
